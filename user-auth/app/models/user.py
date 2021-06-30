@@ -1,6 +1,7 @@
 from sqlalchemy.orm import backref, relationship
 from .db import db
 from .saved import Saved
+from .userTag import UserTag
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 

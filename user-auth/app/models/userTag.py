@@ -1,5 +1,5 @@
 from .db import db
-from .user import User
+# from .user import User
 from .tag import Tag
 
 class UserTag(db.Model):

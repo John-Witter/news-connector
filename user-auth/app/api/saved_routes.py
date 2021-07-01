@@ -1,3 +1,4 @@
+from operator import ne
 from flask import Blueprint, request
 from app.models import db, Saved
 from app.forms import SavedForm
@@ -12,17 +13,19 @@ def get_saved_articles(userId):
     return {"saved":[article.to_dict() for article in saved_articles]}
 
 # adds an article to the current user's saved articles
-@saved_routes.route('/<int:userId>', methods=["POST"])    
-def post_to_saved(userId):
+@saved_routes.route('/', methods=["POST"])    
+def post_to_saved():
     form = SavedForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submi():
-        new_article = SavedForm(
-            userId = form.data['userId'],
-            itemURL = form.data['itemURL']
-        )
-        db.session.add(new_article)
-        db.session.commit()
+    # form['csrf_token'].data = request.cookies['csrf_token']
+    # if form.validate_on_submit():
+    new_article = Saved(
+        userId = form.data['userId'],
+        itemURL = form.data['itemURL']
+    )
+    db.session.add(new_article)
+    db.session.commit()
+    # return new_article.to_dict()
+    return new_article.to_dict()
 
 # returns single saved article for the given article id
 @saved_routes.route('/articles/<int:id>', methods=["GET"])

@@ -46,6 +46,7 @@ def update_interest(id):
 
 @interest_routes.route('/<int:id>', methods=['DELETE'])
 def delete_interest(id):
-    interest = Interest.query.filter_by(id == id).first()
+    interest = Interest.query.filter_by(id = id).first()
     db.session.delete(interest)
     db.session.commit()
+    return {'deleted_interest': interest.to_dict()}

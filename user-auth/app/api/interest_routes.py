@@ -18,14 +18,14 @@ def get_interests():
 @interest_routes.route('/', methods=["POST"])
 def post_interests():
     form = InterestForm()
-    # form['csrf_token'].data = request.cookies['csrf_token']
-    # if form.validate_on_submit():
-    new_interest = Interest(
-        userId=form.data['userId'],
-        title=form.data['title']
-    )
-    db.session.add(new_interest)
-    db.session.commit()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        new_interest = Interest(
+            userId=form.data['userId'],
+            title=form.data['title']
+        )
+        db.session.add(new_interest)
+        db.session.commit()
 
     return new_interest.to_dict()
 
@@ -33,12 +33,12 @@ def post_interests():
 @interest_routes.route('/<int:id>', methods=['PUT'])
 def update_interest(id):
     form = InterestForm()
-    # form['csrf_token'].data = request.cookies['csrf_token']
-    # if form.validate_on_submit():
-    interest = Interest.query.filter_by(id=id).\
-        update(dict({'title':form.data['title']}))
-    db.session.commit()
-    return '', 200
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submit():
+        interest = Interest.query.filter_by(id=id).\
+            update(dict({'title':form.data['title']}))
+        db.session.commit()
+        return '', 200
 
 
 # delete the interest with the given id from the user's interests

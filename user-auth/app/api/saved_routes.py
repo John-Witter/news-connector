@@ -5,11 +5,13 @@ from app.forms import SavedForm
 
 saved_routes = Blueprint('saved', __name__)
 
+
 #return all articles that a given user has saved
 @saved_routes.route('/', methods=["GET"])
 def get_saved_articles():
     saved_articles = Saved.query.filter_by(userId=current_user.id).all()
     return {"saved":[article.to_dict() for article in saved_articles]}
+
 
 # adds an article to the current user's saved articles
 @saved_routes.route('/', methods=["POST"])    
@@ -25,12 +27,14 @@ def post_to_saved():
         db.session.commit()
         return new_article.to_dict()
 
+
 # returns single saved article for the given article id
 @saved_routes.route('/<int:id>', methods=["GET"])
 def get_saved(id):
     saved = Saved.query.filter_by(id = id).first()
 
     return {"saved": saved.to_dict()}
+
 
 # deletes an article from the user's saved articles list
 @saved_routes.route('/<int:id>', methods=['DELETE'])

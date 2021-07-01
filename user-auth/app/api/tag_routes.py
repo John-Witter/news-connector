@@ -4,6 +4,7 @@ from app.forms import TagForm
 
 tag_routes = Blueprint('tags', __name__)
 
+
 # return all tags in the db
 @tag_routes.route('/', methods=["GET"])
 def get_tags():

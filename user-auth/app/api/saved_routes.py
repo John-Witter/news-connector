@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from app.models import db, Saved
 from app.forms import SavedForm
 
@@ -14,7 +14,15 @@ def get_saved(userId):
 # adds an article to the current user's saved articles
 @saved_routes.route('<int:userId', methods=["POST"])    
 def post_to_saved(userId):
-    pass
+    form = SavedForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    if form.validate_on_submi():
+        new_article = SavedForm(
+            userId = form.data['userId'],
+            itemURL = form.data['itemURL']
+        )
+        db.session.add(new_article)
+        db.session.commit()
 
 # returns single saved article for the given article id
 @saved_routes.route('/articles/<int:id>', methods=["GET"])

@@ -21,11 +21,24 @@ def post_interests():
             title = form.data['title']
         )
         db.session.add(new_interest)
-        db.commit()
+        db.session.commit()
 
         return new_interest.to_dict()
 
 # update the interest with the given id
 @interest_routes.route('/<int:id>', methods=['PUT'])    
-def update_interest(id):
+def update_interest(id):    
+    form = InterestForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
     
+    if form.validate_on_submit():
+        interest = Interest.query.filter_by(id == id).first()
+        interest.title = form.data.title
+        db.session.commit
+
+# delete the interest with the given id from the user's interests
+@interest_routes.route('/<int:id>', methods=['DELETE'])
+def delete_interest(id):
+    interest = Interest.query.filter_by(id == id).first()
+    db.session.delete(interest)
+    db.session.commit()

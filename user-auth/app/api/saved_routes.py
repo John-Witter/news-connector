@@ -6,13 +6,13 @@ saved_routes = Blueprint('saved', __name__)
 
 #return all articles that a given user has saved
 @saved_routes.route('/<int:userId>', methods=["GET"])
-def get_saved(userId):
-    saved = Saved.query.filter_by(userId == userId).all()
+def get_saved_articles(userId):
+    saved_articles = Saved.query.filter_by(userId == userId).all()
 
-    return {"saved":[article.to_dict() for article in saved]}
+    return {"saved":[article.to_dict() for article in saved_articles]}
 
 # adds an article to the current user's saved articles
-@saved_routes.route('<int:userId', methods=["POST"])    
+@saved_routes.route('/<int:userId>', methods=["POST"])    
 def post_to_saved(userId):
     form = SavedForm()
     form['csrf_token'].data = request.cookies['csrf_token']

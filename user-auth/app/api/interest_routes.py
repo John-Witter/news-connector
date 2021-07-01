@@ -14,16 +14,16 @@ def get_interests():
 @interest_routes.route('/', methods=["POST"])
 def post_interests():
     form = InterestForm()   
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        new_interest = InterestForm(
-            userId = form.data['userId'],
-            title = form.data['title']
-        )
-        db.session.add(new_interest)
-        db.session.commit()
+    # form['csrf_token'].data = request.cookies['csrf_token']
+    # if form.validate_on_submit():
+    new_interest = Interest(
+        userId = form.data['userId'],
+        title = form.data['title']
+    )
+    db.session.add(new_interest)
+    db.session.commit()
 
-        return new_interest.to_dict()
+    return new_interest.to_dict()
 
 # update the interest with the given id
 @interest_routes.route('/<int:id>', methods=['PUT'])    

@@ -8,7 +8,7 @@ saved_routes = Blueprint('saved', __name__)
 #return all articles that a given user has saved
 @saved_routes.route('/<int:userId>', methods=["GET"])
 def get_saved_articles(userId):
-    saved_articles = Saved.query.filter_by(userId == userId).all()
+    saved_articles = Saved.query.filter_by(userId = userId).all()
 
     return {"saved":[article.to_dict() for article in saved_articles]}
 

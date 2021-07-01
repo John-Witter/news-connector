@@ -4,14 +4,14 @@ from app.forms import SavedForm
 
 saved_routes = Blueprint('saved', __name__)
 
-#return all tags that a given user has selected
+#return all articles that a given user has saved
 @saved_routes.route('/<int:userId>', methods=["GET"])
 def get_saved(userId):
     saved = Saved.query.filter_by(userId == userId).all()
 
     return {"saved":[article.to_dict() for article in saved]}
 
-# adds a tag to the current user's selected tags
+# adds an article to the current user's saved articles
 @saved_routes.route('<int:userId', methods=["POST"])    
 def post_to_saved(userId):
     pass

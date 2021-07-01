@@ -10,7 +10,7 @@ interest_routes = Blueprint('interests', __name__)
 @interest_routes.route('/', methods=['GET'])
 def get_interests():
     interests = Interest.query.all()
-    return {"interests": [titles.to_dict for titles in interests]}
+    return {"interests": [titles.to_dict() for titles in interests]}
 
 # add and interest to view within the newsfeed
 
@@ -30,8 +30,6 @@ def post_interests():
     return new_interest.to_dict()
 
 # update the interest with the given id
-
-
 @interest_routes.route('/<int:id>', methods=['PUT'])
 def update_interest(id):
     form = InterestForm()

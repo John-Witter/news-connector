@@ -1,4 +1,3 @@
-from operator import ne
 from flask import Blueprint, request
 from flask_login import current_user
 from app.models import db, Saved

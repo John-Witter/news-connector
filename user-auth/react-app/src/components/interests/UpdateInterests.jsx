@@ -5,7 +5,7 @@ const UpdateInterests = ({ interest }) => {
     const [selectedInterestTitle, setSelectedInterestTitle] = useState('')
 
     return (
-        < div >
+        < form >
             <li
                 key={interest.id}
                 value={showTitleEditor}
@@ -21,7 +21,7 @@ const UpdateInterests = ({ interest }) => {
                 )}
                 <button>Edit this Interest</button>
             </li>
-        </div >
+        </form >
     )
 }
 

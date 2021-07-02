@@ -31,7 +31,8 @@ export default function InterestReducer(state={}, action) {
     const newState={}
     switch(action.type) {
         case NEW_INTEREST:
-            return state
+            newState[action.interest.id] = action.interest
+            return {...state, newState}
         default:
             return state
     }

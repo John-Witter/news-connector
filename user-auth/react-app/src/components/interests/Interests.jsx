@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addInterest } from "../../store/interests";
 
 const Interests = () => {
     const [title, setTitle] = useState('')
@@ -8,8 +9,8 @@ const Interests = () => {
     const userId = user[0]["id"];
 
     useEffect(() => {
-
-    }, [])
+        dispatch(addInterest(userId, title))
+    }, [dispatch, userId, title])
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -19,7 +20,12 @@ const Interests = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="titleInput">Category Name</label>
-                <input type="text" id="titleInput" />
+                <input 
+                    type="text" 
+                    id="titleInput" 
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
                 <button type="submit">Add to Newsfeed</button>
             </form>
         </div>

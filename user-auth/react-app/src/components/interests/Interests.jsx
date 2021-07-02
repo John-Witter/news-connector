@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addInterest, getAllInterests } from "../../store/interests";
+import UpdateInterests from "./UpdateInterests";
 
 const Interests = () => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
-    const [showTitleEditor, setShowTitleEditor] = useState(false)
-    const [selectedInterestTitle, setSelectedInterestTitle] = useState('')
     const [viewInterests, setViewInterests] = useState('View')
     const user = useSelector((state) => Object.values(state.session));
     const userId = user[0]["id"];
@@ -46,20 +45,7 @@ const Interests = () => {
                 {viewInterests === 'Hide' && (
                     <ul>
                         {allInterests.map(interest => (
-                            <li
-                                key={interest.id}
-                                value={showTitleEditor}
-                                onClick={() => setShowTitleEditor(!showTitleEditor)}
-                            >
-                                {interest.title}
-                                {showTitleEditor && (
-                                    <input
-                                        type="text"
-                                        value={selectedInterestTitle}
-                                        onChange={setSelectedInterestTitle}
-                                    />
-                                )}
-                            </li>
+                           <UpdateInterests interest={interest} key={interest.id} />
                         )
                         )}
                     </ul>

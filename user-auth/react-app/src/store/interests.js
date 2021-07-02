@@ -1,7 +1,7 @@
 // constants
 const CREATE_INTEREST = 'interests/CREATE_INTEREST'
 const READ_INTERESTS = 'interests/READ_INTERESTS'
-const READ_ONE_INTEREST = 'interests/READ_ONE_INTEREST'
+const READ_ONE_INTEREST = 'interests/READ_ONE_INTEREST'  // REMOVE THIS?
 const UPDATE_INTEREST = 'interests/UPDATE_INTEREST'
 const DELETE_INTEREST = 'interests/DELETE_INTEREST'
 
@@ -59,6 +59,29 @@ export const getAllInterests = (userId) => async (dispatch) => {
     }
 }
 
+export const getOneInterest = (interestId) => async (dispatch) => {
+    const res = await fetch(`/api/interest/${interestId}`)
+
+    if (res.ok) {
+        const data = await res.json()
+        dispatch(readAllInterests(data))
+    }
+
+    if (res.ok) {
+        const data = await res.json()
+        dispatch(readOneInterest(data))
+    }
+}
+
+export const editInterestTitle = (interestId) => async (dispatch) => {
+    const res = await fetch(`/api/interest/${interestId}`)
+
+    if (res.ok) {
+        const data = await res.json()
+        dispatch(updateInterest(data))
+    }
+}
+
 // reducer
 export default function InterestReducer(state={}, action) {
     let newState={...state}
@@ -70,6 +93,12 @@ export default function InterestReducer(state={}, action) {
             action.interests.interests.forEach(interest => {
                 newState[interest.id] = interest
             })
+            return newState
+        case READ_ONE_INTEREST:
+            newState[action.interest.interests.id] = action.interest.interests
+            return newState
+        case UPDATE_INTEREST:
+            console.log('UPDATE_INTEREST action:', action)
             return newState
         default:
             return state

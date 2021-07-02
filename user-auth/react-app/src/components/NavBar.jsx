@@ -31,11 +31,9 @@ const NavBar = () => {
           <LogoutButton />
         </li>
         <li>
-          <NavLink to="">
-            <Interests />
-          </NavLink>
+          <Interests />
         </li>
-        
+
       </ul>
     </nav>
   );

@@ -1,19 +1,25 @@
 import React, { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { addInterest } from "../../store/interests";
 
 const Interests = () => {
-    const [title, setTitle] = useState('')
     const dispatch = useDispatch()
+    const history = useHistory()
+    const [title, setTitle] = useState('')
     const user = useSelector((state) => Object.values(state.session));
     const userId = user[0]["id"];
 
-    useEffect(() => {
-        dispatch(addInterest(userId, title))
-    }, [dispatch, userId, title])
+    // useEffect(() => {
+    //     console.log('!!!useEffect: userId:', userId, 'title:', title)
+    //     dispatch(addInterest(userId, title))
+    // }, [dispatch, userId, title])
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        console.log('inside handleSubmit')
+        dispatch(addInterest(userId, title))
+        setTitle('')
     }
 
     return (

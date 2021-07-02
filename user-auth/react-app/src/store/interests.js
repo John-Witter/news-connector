@@ -9,6 +9,7 @@ const addNewInterest = (interest) => ({
 
 // thunks
 export const addInterest = (userId, title) => async (dispatch) => {
+    console.log('addInterest')
     const res = await fetch('/api/interests', {
         method: "POST",
         headers: {
@@ -23,7 +24,7 @@ export const addInterest = (userId, title) => async (dispatch) => {
     if (res.ok) {
         const data = await res.json()
         console.log(data)
-    }
+        dispatch(addNewInterest(data)) }
 }
 
 // reducer
@@ -32,5 +33,8 @@ export default function InterestReducer(state={}, action) {
     switch(action.type) {
         case NEW_INTEREST:
             console.log('HIT THE REDUCER, action:', action)
+            return state
+        default:
+            return state
     }
 }

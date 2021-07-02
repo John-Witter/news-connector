@@ -1,6 +1,7 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addInterest, getAllInterests } from "../../store/interests";
+import UpdateInterests from "./UpdateInterests";
 
 const Interests = () => {
     const dispatch = useDispatch()
@@ -25,9 +26,9 @@ const Interests = () => {
         <div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="titleInput">Category Name</label>
-                <input 
-                    type="text" 
-                    id="titleInput" 
+                <input
+                    type="text"
+                    id="titleInput"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 />
@@ -35,22 +36,20 @@ const Interests = () => {
             </form>
 
             <div>
-                    <p
-                        value={viewInterests}
-                        onClick={() => viewInterests === 'View' ? setViewInterests('Hide') : setViewInterests('View')}
-                    >
-                        {viewInterests} Your Interests 
-                    </p>
-                    {viewInterests === 'Hide' && (
-                        <ul>
-                            {allInterests.map(interest => (
-                                <li key={interest.id}>
-                                    {interest.title}
-                                </li>
-                            )
+                <p
+                    value={viewInterests}
+                    onClick={() => viewInterests === 'View' ? setViewInterests('Hide') : setViewInterests('View')}
+                >
+                    {viewInterests} Your Interests
+                </p>
+                {viewInterests === 'Hide' && (
+                    <ul>
+                        {allInterests.map(interest => (
+                           <UpdateInterests interest={interest} key={interest.id} />
+                        )
                         )}
-                        </ul>
-                    )}
+                    </ul>
+                )}
             </div>
         </div>
     )

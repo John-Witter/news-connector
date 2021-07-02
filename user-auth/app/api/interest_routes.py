@@ -11,6 +11,13 @@ def get_interests():
     return {"interests": [titles.to_dict() for titles in interests]}
 
 
+# return the interest with the given id
+@interest_routes.route('/<int:id>', methods=["GET"])
+def get_one_interest(id):
+    interest = Interest.query.filter_by(id = id).first()
+    return interest.to_dict()
+
+
 # add and interest to view within the newsfeed
 @interest_routes.route('/', methods=["POST"])
 def post_interests():

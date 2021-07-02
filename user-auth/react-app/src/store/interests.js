@@ -23,16 +23,18 @@ export const addInterest = (userId, title) => async (dispatch) => {
     if (res.ok) {
         const data = await res.json()
         console.log(data)
-        dispatch(addNewInterest(data)) }
+        dispatch(addNewInterest(data))
+    }
 }
 
 // reducer
 export default function InterestReducer(state={}, action) {
-    const newState={}
+    let newState={}
     switch(action.type) {
         case NEW_INTEREST:
-            newState[action.interest.id] = action.interest
-            return {...state, newState}
+            newState = {...state}
+            newState[action.interest.title] = action.interest
+            return newState
         default:
             return state
     }

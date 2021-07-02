@@ -51,7 +51,7 @@ export const addInterest = (userId, title) => async (dispatch) => {
 }
 
 export const getAllInterests = (userId) => async (dispatch) => {
-    const res = await fetch('/api/interests')
+    const res = await fetch('/api/interests/')
 
     if (res.ok) {
         const data = await res.json()
@@ -60,7 +60,7 @@ export const getAllInterests = (userId) => async (dispatch) => {
 }
 
 export const getOneInterest = (interestId) => async (dispatch) => {
-    const res = await fetch(`/api/interest/${interestId}`)
+    const res = await fetch(`/api/interest/${interestId}/`)
 
     if (res.ok) {
         const data = await res.json()
@@ -74,7 +74,7 @@ export const getOneInterest = (interestId) => async (dispatch) => {
 }
 
 export const editInterestTitle = (interestId) => async (dispatch) => {
-    const res = await fetch(`/api/interest/${interestId}`)
+    const res = await fetch(`/api/interest/${interestId}/`)
 
     if (res.ok) {
         const data = await res.json()

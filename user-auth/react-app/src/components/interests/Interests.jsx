@@ -7,8 +7,11 @@ const Interests = () => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const [viewInterests, setViewInterests] = useState('View')
-    const user = useSelector((state) => Object.values(state.session));
-    const userId = user[0]["id"] || 0;
+    const user = useSelector((state) => state.session.user);
+    let userId
+    if (user) {
+        userId = user["id"];
+    }
 
     useEffect(() => {
         dispatch(getAllInterests(userId))
@@ -21,6 +24,7 @@ const Interests = () => {
         dispatch(addInterest(userId, title))
         setTitle('')
     }
+    console.log('allInterests:', allInterests)
 
     return (
         <div>

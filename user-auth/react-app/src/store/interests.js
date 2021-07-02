@@ -46,18 +46,28 @@ export const addInterest = (userId, title) => async (dispatch) => {
 
     if (res.ok) {
         const data = await res.json()
-        console.log(data)
         dispatch(createNewInterest(data))
+    }
+}
+
+export const getAllInterests = (userId) => async (dispatch) => {
+    const res = await fetch('/api/interests')
+
+    if (res.ok) {
+        const data = await res.json()
+        dispatch(readAllInterests(data))
     }
 }
 
 // reducer
 export default function InterestReducer(state={}, action) {
-    let newState={}
+    let newState={...state}
     switch(action.type) {
         case CREATE_INTEREST:
-            newState = {...state}
             newState[action.interest.title] = action.interest
+            return newState
+        case READ_INTERESTS:
+            console.log('!!!!READ_INTERESTS action:', action)
             return newState
         default:
             return state

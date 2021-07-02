@@ -1,12 +1,16 @@
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addInterest } from "../../store/interests";
+import { addInterest, getAllInterests } from "../../store/interests";
 
 const Interests = () => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
     const user = useSelector((state) => Object.values(state.session));
     const userId = user[0]["id"];
+
+    useEffect(() => {
+        dispatch(getAllInterests(userId))
+    }, [dispatch])
 
     const handleSubmit = (e) => {
         e.preventDefault()

@@ -10,7 +10,7 @@ const addNewInterest = (interest) => ({
 // thunks
 export const addInterest = (userId, title) => async (dispatch) => {
     console.log('addInterest')
-    const res = await fetch('/api/interests', {
+    const res = await fetch('/api/interests/', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

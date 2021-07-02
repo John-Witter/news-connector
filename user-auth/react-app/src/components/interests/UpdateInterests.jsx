@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const UpdateInterests = ({ interest }) => {
     const [showTitleEditor, setShowTitleEditor] = useState(false)
-    const [selectedInterestTitle, setSelectedInterestTitle] = useState('')
+    const [selectedInterestTitle, setSelectedInterestTitle] = useState(interest.title)
 
     return (
         < form >
@@ -11,7 +11,7 @@ const UpdateInterests = ({ interest }) => {
                 value={showTitleEditor}
                 onDoubleClick={() => setShowTitleEditor(!showTitleEditor)}
             >
-                {interest.title}
+                {showTitleEditor === false && selectedInterestTitle}
                 {showTitleEditor && (
                     <input
                         type="text"
@@ -19,7 +19,7 @@ const UpdateInterests = ({ interest }) => {
                         onChange={e => setSelectedInterestTitle(e.target.value)}
                     />
                 )}
-                <button>Edit this Interest</button>
+                {/* <button>Edit this Interest</button> */}
             </li>
         </form >
     )

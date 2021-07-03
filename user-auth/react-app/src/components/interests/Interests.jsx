@@ -14,6 +14,7 @@ const Interests = () => {
     }
 
     useEffect(() => {
+        if (!user) return (null)
         dispatch(getAllInterests(userId))
     }, [dispatch])
 

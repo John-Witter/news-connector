@@ -21,9 +21,9 @@ const readOneInterest = (interest) => ({
     interest
 })
 
-const updateInterest = (title) => ({
+const updateInterest = (interest) => ({
     type: UPDATE_INTEREST,
-    title
+    interest
 })
 
 const deleteInterest = (interest) => ({
@@ -73,12 +73,29 @@ export const getOneInterest = (interestId) => async (dispatch) => {
     }
 }
 
-export const editInterestTitle = (interestId) => async (dispatch) => {
-    const res = await fetch(`/api/interest/${interestId}/`)
-
+export const editInterestTitle = (userId, interestId, title) => async (dispatch) => {
+    const res = await fetch(`/api/interests/`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            userId,
+            interestId,
+            title
+        })
+    })
     if (res.ok) {
         const data = await res.json()
-        dispatch(updateInterest(data))
+        console.log('userId:', userId, 'interestId:', interestId, 'title:', title)
+        console.log('data:', data)
+        const dataToDispatch = {
+            userId,
+            interestId,
+            "title": data.title
+        }
+        console.log('dataToDispatch:', dataToDispatch)
+        dispatch(updateInterest(dataToDispatch))
     }
 }
 
@@ -99,6 +116,12 @@ export default function InterestReducer(state={}, action) {
             return newState
         case UPDATE_INTEREST:
             console.log('UPDATE_INTEREST action:', action)
+            const interest = {
+                "id": action.interest.interestId,
+                "tite": action.interest.title,
+                "userId": action.interest.userId
+            }
+            newState[interest.id] = interest
             return newState
         default:
             return state

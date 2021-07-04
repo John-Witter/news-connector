@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from app.models import db, Interest
 from app.forms import InterestForm
+from app.forms.update_interest_form import UpdateInterestForm
 
 interest_routes = Blueprint('interests', __name__)
 
@@ -37,14 +38,17 @@ def post_interests():
 # update the interest with the given id
 @interest_routes.route('/', methods=['PUT'])
 def update_interest():
-    form = InterestForm()
+    form = UpdateInterestForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        id = form.data["userId"]
-        interest = Interest.query.filter_by(id=id).\
-            update(dict({'title':form.data['title']}))
-        updated_interest = Interest.query.filter_by(id=id).first()
+        interestId = form.data["interestId"]
+        interest = Interest.query.filter_by(id=interestId).\
+            update(dict({'title': form.data['title']}))
+        updated_interest = Interest.query.filter_by(id=interestId).first()
         db.session.commit()
+
+        print('!!!')
+        print(form.data)
         print('!!!')
         print(updated_interest.to_dict())
         return updated_interest.to_dict()

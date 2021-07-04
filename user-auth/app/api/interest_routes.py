@@ -38,10 +38,10 @@ def post_interests():
 @interest_routes.route('/', methods=['PUT'])
 def update_interest():
     form = InterestForm()
-    print(f"!!!!!!form.data: {form.data}")
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-
+        id = form.data["userId"]
+        print(f"!!!!!!!id: {id}")
         interest = Interest.query.filter_by(id=id).\
             update(dict({'title':form.data['title']}))
         db.session.commit()

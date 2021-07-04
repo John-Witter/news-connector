@@ -10,14 +10,15 @@ const UpdateInterests = ({ userId, interest }) => {
 
     const handleEditConfirm = (e) => {
         e.preventDefault()
+        setShowTitleEditor(true)
         dispatch(editInterestTitle(userId, interest.id, selectedInterestTitle))
+        // console.log('updatedInterest:', updatedInterest)
+        // setSelectedInterestTitle(updatedInterest.title)
     }
 
     return (
         < form onSubmit={handleEditConfirm}>
-            <li
-                value={showTitleEditor}
-            >
+            <li>
                 
                 {showTitleEditor === false && selectedInterestTitle}
                 {showTitleEditor && (                    
@@ -29,9 +30,9 @@ const UpdateInterests = ({ userId, interest }) => {
                         />
                         {interest.title !== selectedInterestTitle && 
                         <button 
-                            type="submit"
-                            value={showTitleEditor}
-                            onClick={e => setShowTitleEditor(true)}
+                            // type="submit"
+                            // value={showTitleEditor}
+                            // onClick={e => setShowTitleEditor(true)}
                         >
                             Confirm
                         </button>

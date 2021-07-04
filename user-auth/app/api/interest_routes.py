@@ -37,12 +37,18 @@ def post_interests():
 # update the interest with the given id
 @interest_routes.route('/<int:id>', methods=['PUT'])
 def update_interest(id):
+    print('in the PUT!@#!@#!@#')
     form = InterestForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
-        interest = Interest.query.filter_by(id=id).\
-            update(dict({'title':form.data['title']}))
+        # interest = Interest.query.filter_by(id=id).update(dict(title=form.data['title']))
+        interest = Interest.query.filter_by(id=id).first()
+        print(f'before update interest:')
+        print(interest)
+        interest.data = {'title': form.data['title']}
         db.session.commit()
+        print(f'after update interest:')
+        print(interest)
         return '', 200
 
 

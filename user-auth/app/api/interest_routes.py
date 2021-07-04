@@ -46,11 +46,6 @@ def update_interest():
             update(dict({'title': form.data['title']}))
         updated_interest = Interest.query.filter_by(id=interestId).first()
         db.session.commit()
-
-        print('!!!')
-        print(form.data)
-        print('!!!')
-        print(updated_interest.to_dict())
         return updated_interest.to_dict()
 
 

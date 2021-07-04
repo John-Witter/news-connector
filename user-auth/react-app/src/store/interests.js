@@ -21,9 +21,9 @@ const readOneInterest = (interest) => ({
     interest
 })
 
-const updateInterest = (title) => ({
+const updateInterest = (interest) => ({
     type: UPDATE_INTEREST,
-    title
+    interest
 })
 
 const deleteInterest = (interest) => ({
@@ -116,6 +116,12 @@ export default function InterestReducer(state={}, action) {
             return newState
         case UPDATE_INTEREST:
             console.log('UPDATE_INTEREST action:', action)
+            const interest = {
+                "id": action.interest.interestId,
+                "tite": action.interest.title,
+                "userId": action.interest.userId
+            }
+            newState[interest.id] = interest
             return newState
         default:
             return state

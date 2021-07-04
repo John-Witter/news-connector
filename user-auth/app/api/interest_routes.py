@@ -41,11 +41,13 @@ def update_interest():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         id = form.data["userId"]
-        print(f"!!!!!!!id: {id}")
         interest = Interest.query.filter_by(id=id).\
             update(dict({'title':form.data['title']}))
+        updated_interest = Interest.query.filter_by(id=id).first()
         db.session.commit()
-        return '', 200
+        print('!!!')
+        print(updated_interest.to_dict())
+        return updated_interest.to_dict()
 
 
 # delete the interest with the given id from the user's interests

@@ -55,11 +55,10 @@ def update_interest():
 @interest_routes.route('/', methods=['DELETE'])
 def delete_interest():
     form = UpdateInterestForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        interestId = form.data["interestId"]
-        interest = Interest.query.filter_by(id=interestId)
-        interest = Interest.query.filter_by(id = id).first()
-        db.session.delete(interest)
-        db.session.commit()
-        return {'deleted_interest': interest.to_dict()}
+    print(f"!!!!!DELETEFORM.data: {form.data}")
+    interestId = form.data["interestId"]
+    interest = Interest.query.filter_by(id=interestId)
+    interest = Interest.query.filter_by(id = id).first()
+    db.session.delete(interest)
+    db.session.commit()
+    return interest.to_dict()

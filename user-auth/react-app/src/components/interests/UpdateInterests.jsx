@@ -50,6 +50,7 @@ const UpdateInterests = ({ userId, interest }) => {
                 >
                     {editButtonText}
                 </button>
+                <DeleteInterest userId={userId} interest={interest} />
             </li>
         </form >
     )

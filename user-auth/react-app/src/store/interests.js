@@ -97,6 +97,29 @@ export const editInterestTitle = (userId, interestId, title) => async (dispatch)
     }
 }
 
+export const removeInterest = (userId, interestId, title) => async (dispatch) => {
+    const res = await fetch(`/api/interests/`, {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            userId, 
+            interestId,
+            title
+        })
+    })
+    if (res.ok) {
+        const data = await res.json()
+        const dataToDispatch = {
+            userId,
+            interestId,
+            "title": data.title
+        }
+        dispatch(deleteInterest(dataToDispatch))
+    }
+}
+
 // reducer
 export default function InterestReducer(state={}, action) {
     let newState={...state}
@@ -120,6 +143,16 @@ export default function InterestReducer(state={}, action) {
                 "userId": action.interest.userId
             }
             newState[interest.id] = interest
+            return newState
+        case DELETE_INTEREST:
+            console.log('DELETE_INTEREST action:', action)
+            const interestToDelete = {
+                "id": action.interest.interestId,
+                "tite": action.interest.title,
+                "userId": action.interest.userId
+            }
+            const id = interestToDelete['id']
+            newState.pop(id)
             return newState
         default:
             return state

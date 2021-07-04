@@ -6,6 +6,8 @@ from app.forms.update_interest_form import UpdateInterestForm
 interest_routes = Blueprint('interests', __name__)
 
 # return all of the user's user-created interests
+
+
 @interest_routes.route('/', methods=['GET'])
 def get_interests():
     interests = Interest.query.all()
@@ -15,7 +17,7 @@ def get_interests():
 # return the interest with the given id
 @interest_routes.route('/<int:id>', methods=["GET"])
 def get_one_interest(id):
-    interest = Interest.query.filter_by(id = id).first()
+    interest = Interest.query.filter_by(id=id).first()
     return interest.to_dict()
 
 
@@ -50,9 +52,13 @@ def update_interest():
 
 
 # delete the interest with the given id from the user's interests
-@interest_routes.route('/<int:id>', methods=['DELETE'])
-def delete_interest(id):
+@interest_routes.route('/', methods=['DELETE'])
+def delete_interest():
+    form = UpdateInterestForm()
+    print(f"!!!!!DELETEFORM.data: {form.data}")
+    interestId = form.data["interestId"]
+    interest = Interest.query.filter_by(id=interestId)
     interest = Interest.query.filter_by(id = id).first()
     db.session.delete(interest)
     db.session.commit()
-    return {'deleted_interest': interest.to_dict()}
+    return interest.to_dict()

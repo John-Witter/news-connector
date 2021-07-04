@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { editInterestTitle } from "../../store/interests";
+import DeleteInterest from "./DeleteInterest";
 
 const UpdateInterests = ({ userId, interest }) => {
     const dispatch = useDispatch()
@@ -49,6 +50,7 @@ const UpdateInterests = ({ userId, interest }) => {
                 >
                     {editButtonText}
                 </button>
+                <DeleteInterest userId={userId} interest={interest} />
             </li>
         </form >
     )

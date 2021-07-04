@@ -51,7 +51,7 @@ const Interests = () => {
                 {viewInterests === 'Hide' && (
                     <ul>
                         {allInterests.map(interest => (
-                           <UpdateInterests interest={interest} key={interest.id} />
+                           <UpdateInterests userId={userId} interest={interest} key={interest.id} />
                         )
                         )}
                     </ul>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from "react-redux";
 import { editInterestTitle } from "../../store/interests";
 
-const UpdateInterests = ({ interest }) => {
+const UpdateInterests = ({ userId, interest }) => {
     const dispatch = useDispatch()
     const [showTitleEditor, setShowTitleEditor] = useState(false)
     const [selectedInterestTitle, setSelectedInterestTitle] = useState(interest.title)
@@ -10,7 +10,7 @@ const UpdateInterests = ({ interest }) => {
 
     const handleEditConfirm = (e) => {
         e.preventDefault()
-        dispatch(editInterestTitle(interest.id, selectedInterestTitle))
+        dispatch(editInterestTitle(userId, interest.id, selectedInterestTitle))
     }
 
     return (

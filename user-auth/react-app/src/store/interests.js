@@ -73,19 +73,20 @@ export const getOneInterest = (interestId) => async (dispatch) => {
     }
 }
 
-export const editInterestTitle = (interestId, title) => async (dispatch) => {
+export const editInterestTitle = (userId, interestId, title) => async (dispatch) => {
     console.log('interestId:', interestId, 'title:', title)
-    const res = await fetch(`/api/interest/${interestId}/`, {
+    const res = await fetch(`/api/interests/`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
+            userId,
             interestId,
             title
         })
     })
-
+    console.log('ASDFetr after the fetch res:', res)
     if (res.ok) {
         const data = await res.json()
         dispatch(updateInterest(data))

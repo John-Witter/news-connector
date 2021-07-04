@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useDispatch } from "react-redux";
+import { editInterestTitle } from "../../store/interests";
 
 const UpdateInterests = ({ interest }) => {
+    const dispatch = useDispatch()
     const [showTitleEditor, setShowTitleEditor] = useState(false)
     const [selectedInterestTitle, setSelectedInterestTitle] = useState(interest.title)
     const [editButtonText, setEditButtonText] = useState('Edit')
@@ -21,7 +24,7 @@ const UpdateInterests = ({ interest }) => {
                             value={selectedInterestTitle}
                             onChange={e => setSelectedInterestTitle(e.target.value)}
                         />
-                        <button type="submit">Confirm</button>
+                        {interest.title !== selectedInterestTitle && <button type="submit">Confirm</button>}
                     </>
                 )}
                 <button

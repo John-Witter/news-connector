@@ -15,9 +15,9 @@ const Interests = () => {
 
     useEffect(() => {
         console.log('userId:', userId)
-        // if (!userId) return 
+        if (!userId) return (<p>Log in to add interests to your newsfeed!</p>)
         dispatch(getAllInterests(userId))
-    }, [dispatch])
+    }, [dispatch, userId])
 
     const allInterests = useSelector(state => Object.values(state.interest))
 

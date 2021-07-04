@@ -87,15 +87,13 @@ export const editInterestTitle = (userId, interestId, title) => async (dispatch)
     })
     if (res.ok) {
         const data = await res.json()
-        console.log('userId:', userId, 'interestId:', interestId, 'title:', title)
-        console.log('data:', data)
         const dataToDispatch = {
             userId,
             interestId,
             "title": data.title
         }
-        console.log('dataToDispatch:', dataToDispatch)
         dispatch(updateInterest(dataToDispatch))
+        return(dataToDispatch)
     }
 }
 

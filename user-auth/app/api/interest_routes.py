@@ -57,8 +57,7 @@ def delete_interest():
     form = UpdateInterestForm()
     print(f"!!!!!DELETEFORM.data: {form.data}")
     interestId = form.data["interestId"]
-    interest = Interest.query.filter_by(id=interestId)
-    interest = Interest.query.filter_by(id = id).first()
+    interest = Interest.query.filter_by(id=interestId).first()
     db.session.delete(interest)
     db.session.commit()
     return interest.to_dict()

@@ -55,9 +55,10 @@ def update_interest():
 @interest_routes.route('/', methods=['DELETE'])
 def delete_interest():
     form = UpdateInterestForm()
-    print(f"!!!!!DELETEFORM.data: {form.data}")
     interestId = form.data["interestId"]
     interest = Interest.query.filter_by(id=interestId).first()
     db.session.delete(interest)
     db.session.commit()
+    print(f"!!!!!!DELETEFORM interest:")
+    print(interest.to_dict())
     return interest.to_dict()

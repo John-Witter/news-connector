@@ -8,7 +8,7 @@ const Interests = () => {
     const [title, setTitle] = useState('')
     const [viewInterests, setViewInterests] = useState('View')
     const user = useSelector((state) => state.session.user);
-    let allInterests
+    let allInterests = useSelector(state => state.interest)
     let userId
     if (user) {
         userId = user["id"];
@@ -17,10 +17,10 @@ const Interests = () => {
     useEffect(() => {
         console.log('userId:', userId)
         if (!userId) return
-        dispatch(getAllInterests(userId))
-    }, [dispatch, userId])
+        dispatch(getAllInterests(user['id']))
+    }, [dispatch, user])
 
-    allInterests = useSelector(state => Object.values(state.interest))
+    // allInterests = useSelector(state => state.interest)
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -49,12 +49,12 @@ const Interests = () => {
                 >
                     {viewInterests} Your Interests
                 </p>
-                {viewInterests === 'Hide' && !userId && (
+                {viewInterests === 'Hide' && !user && (
                     <p>Log in to add interests to your newsfeed!</p>
                 )}
-                {viewInterests === 'Hide' && userId &&(                    
+                {viewInterests === 'Hide' && user &&(                    
                     <ul>
-                        {allInterests.map(interest => (
+                        {Object.values(allInterests).map(interest => (
                            <UpdateInterests userId={userId} interest={interest} key={interest.id} />
                         )
                         )}

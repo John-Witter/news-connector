@@ -152,7 +152,10 @@ export default function InterestReducer(state={}, action) {
                 "userId": action.interest.userId
             }
             const id = interestToDelete['id']
-            newState.pop(id)
+            console.log('newsState before delete:', newState)
+            delete newState.id
+            
+            console.log('newsState before after:', newState)
             return newState
         default:
             return state

@@ -15,8 +15,6 @@ const UpdateInterests = ({ userId, interest }) => {
         } else {
             interest.title = selectedInterestTitle
         }
-        // console.log("INTEREST CHANGED", interest)
-        // console.log("SELECTED INTEREST TITLE", selectedInterestTitle)
     }, [interest, selectedInterestTitle])
 
     const handleEditConfirm = (e) => {
@@ -24,6 +22,7 @@ const UpdateInterests = ({ userId, interest }) => {
         setShowTitleEditor(false)
         dispatch(editInterestTitle(userId, interest.id, selectedInterestTitle))
         interest.title = selectedInterestTitle
+        editButtonText === 'Cancel' ? setEditButtonText('Edit') : setEditButtonText('Cancel')
     }
 
     if (!selectedInterestTitle) {

@@ -14,8 +14,7 @@ const Interests = () => {
         userId = user["id"];
     }
 
-    useEffect(() => {
-        console.log('userId:', userId)
+    useEffect(() => {        
         if (!userId) return
         dispatch(getAllInterests(user['id']))
     }, [dispatch, user])
@@ -26,8 +25,7 @@ const Interests = () => {
         e.preventDefault()
         dispatch(addInterest(userId, title))
         setTitle('')
-    }
-    console.log('allInterests:', allInterests)
+    }    
 
     return (
         <div>

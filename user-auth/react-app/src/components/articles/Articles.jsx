@@ -27,7 +27,7 @@ const Articles = () => {
                     <li key={article.url}>
                         <h2>{article.title}</h2>
                         <img src={article.urlToImage} alt="" />
-                        <p>{article.content}</p>
+                        <p>{article.description}</p>
                     </li>
                 )
             })}

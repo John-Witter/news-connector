@@ -49,10 +49,10 @@ const Interests = () => {
                 >
                     {viewInterests} Your Interests
                 </p>
-                {viewInterests === 'Hide' && !userId && (
+                {viewInterests === 'Hide' && !user && (
                     <p>Log in to add interests to your newsfeed!</p>
                 )}
-                {viewInterests === 'Hide' && userId &&(                    
+                {viewInterests === 'Hide' && user &&(                    
                     <ul>
                         {Object.values(allInterests).map(interest => (
                            <UpdateInterests userId={userId} interest={interest} key={interest.id} />

@@ -12,16 +12,18 @@ const UpdateInterests = ({ userId, interest }) => {
     useEffect(() => {
         if (selectedInterestTitle === '') {
             setSelectedInterestTitle(interest.title)
+        } else {
+            interest.title = selectedInterestTitle
         }
-        console.log("INTEREST CHANGED", interest)
-        console.log("SELECTED INTEREST TITLE", selectedInterestTitle)
+        // console.log("INTEREST CHANGED", interest)
+        // console.log("SELECTED INTEREST TITLE", selectedInterestTitle)
     }, [interest, selectedInterestTitle])
 
     const handleEditConfirm = (e) => {
         e.preventDefault()
         setShowTitleEditor(false)
         dispatch(editInterestTitle(userId, interest.id, selectedInterestTitle))
-        // console.log('updatedInterest:', updatedInterest)
+        interest.title = selectedInterestTitle
     }
 
     if (!selectedInterestTitle) {

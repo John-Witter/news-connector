@@ -125,7 +125,7 @@ export default function InterestReducer(state={}, action) {
     let newState={...state}
     switch(action.type) {
         case CREATE_INTEREST:
-            newState[action.interest.title] = action.interest
+            newState[action.interest.id] = action.interest
             return newState
         case READ_INTERESTS:
             action.interests.interests.forEach(interest => {

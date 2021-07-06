@@ -125,7 +125,7 @@ export default function InterestReducer(state={}, action) {
     let newState={...state}
     switch(action.type) {
         case CREATE_INTEREST:
-            newState[action.interest.title] = action.interest
+            newState[action.interest.id] = action.interest
             return newState
         case READ_INTERESTS:
             action.interests.interests.forEach(interest => {
@@ -146,14 +146,10 @@ export default function InterestReducer(state={}, action) {
             return newState
         case DELETE_INTEREST:
             console.log('DELETE_INTEREST action:', action)
-            const interestToDelete = {
-                "id": action.interest.interestId,
-                "tite": action.interest.title,
-                "userId": action.interest.userId
-            }
-            const id = interestToDelete['id']
-            console.log('newsState before delete:', newState)
-            delete newState.id
+            console.log('INTEREST ID:', action.interest.interestId)
+            console.log('NewSTATE INTEREST ID:', newState[action.interest.interestId])
+
+            delete newState[action.interest.interestId]
             
             console.log('newsState before after:', newState)
             return newState

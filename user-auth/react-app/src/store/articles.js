@@ -24,10 +24,12 @@ export default function ArticleReducer (state={}, action) {
 
     switch (action.type) {
         case READ_ARTICLES:
-            console.log('READ_ARTICLE action:', action.articles)
-            action.articles.articles.forEach(article => {
-                newState[article.url] = article
-            })
+            console.log('READ_ARTICLE action:', action.articles.articles.articles)
+            // news api articles
+            let articles = action.articles.articles.articles
+            let gifs = action.articles.gifs.data
+            newState['articles'] = articles
+            newState['gifs'] = gifs
             return newState
         default:
             return state

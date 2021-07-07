@@ -4,26 +4,11 @@ import { loadArticles } from "../../store/articles";
 import './articles.css'
 
 const Articles = () => {
-    const dispatch = useDispatch()
-    const user = useSelector(state => state.session.user)
-    const articles = useSelector(state => state.article)
-    let userId 
-    
-    if (user) {
-        userId = user['id']
-    }
-    
-    useEffect(() => {
-        if (!userId) return
-        dispatch(loadArticles(userId))        
-    }, [dispatch, userId])
-    
-    console.log('!!!!ARTICLES Length:', Object.values(articles).length)
-    console.log('!!!!ARTICLES:', articles)
+
 
     return (
         <ul>
-            {articles && Object.values(articles).map(article => {
+            {/* {articles && Object.values(articles).map(article => {
                 return (
                     <li key={article.url}>
                         <h2>{article.title}</h2>
@@ -31,7 +16,7 @@ const Articles = () => {
                         <p>{article.description}</p>
                     </li>
                 )
-            })}
+            })} */}
         </ul>
     )
 }

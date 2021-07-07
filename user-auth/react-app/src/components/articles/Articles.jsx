@@ -18,6 +18,7 @@ const Articles = () => {
         dispatch(loadArticles(userId))        
     }, [dispatch, userId])
     
+    console.log('!!!!ARTICLES Length:', Object.values(articles).length)
     console.log('!!!!ARTICLES:', articles)
 
     return (

@@ -40,7 +40,7 @@ def get_articles():
 
     giphy_res = requests.get(giphy_url)
 
-
+    # return {'gifs': '', 'articles': ''}
     return {'gifs': giphy_res.json(), 'articles': news_res.json()} 
     # return news_res.json()
     # return giphy_res.json()

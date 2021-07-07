@@ -1,3 +1,4 @@
+from re import T
 from flask import Blueprint, jsonify, request
 from flask_login import current_user
 import requests, json
@@ -22,11 +23,24 @@ def get_articles():
     titles = tags + interests
     print('!!!!!!titles:', titles)
 
-    api_key = '13bc774f3bb545d8935600ca47e4cfcf'
+    # 100 requests per day available
+    news_api_key = '13bc774f3bb545d8935600ca47e4cfcf'
 
-    url = ('https://newsapi.org/v2/everything?q=' + ' OR '.join(titles)
-           ) + '&language=en' + '&apiKey=' + api_key + '&pageSize=100'
+    news_url = ('https://newsapi.org/v2/everything?q=' + ' OR '.join(titles)
+           ) + '&language=en' + '&apiKey=' + news_api_key + '&pageSize=100'
 
-    res = requests.get(url)
+    news_res = requests.get(news_url)
 
-    return res.json()
+    giphy_api_key = 'jyp7w8WhK8aP2NwucT1vGpyUUYaiWhtc'
+
+    if len(titles) > 5:
+        titles = titles[-4:]
+
+    giphy_url = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphy_api_key + '&q=' + ' '.join(titles) + '&limit=100&offset=0&rating=g&lang=en'
+
+    giphy_res = requests.get(giphy_url)
+
+
+    return {'gifs': giphy_res.json(), 'articles': news_res.json()} 
+    # return news_res.json()
+    # return giphy_res.json()

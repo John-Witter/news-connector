@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadArticles } from "../../store/articles";
 import Article from '../articles/Article';
 import Gif from '../gifs/Gif';
+import '../components.css'
 
 const Content = () => {
     const dispatch = useDispatch()
@@ -28,7 +29,7 @@ const Content = () => {
         <div>
             {articles && articles.map((article, idx) => {
                 return (
-                    <div>
+                    <div className='container'>
                         <Article article={article} key={article.url} />
                         {idx % 2 === 0 && gifs[idx / 2] && <Gif gif={gifs[idx / 2]} key={gifs[idx / 2]}/>}
                     </div>

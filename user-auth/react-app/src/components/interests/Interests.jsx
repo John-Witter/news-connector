@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addInterest, getAllInterests } from "../../store/interests";
 import UpdateInterests from "./UpdateInterests";
+import '../components.css'
 
 const Interests = () => {
     const dispatch = useDispatch()
@@ -28,7 +29,7 @@ const Interests = () => {
     }    
 
     return (
-        <div>
+        <div className='sidebar'>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="titleInput">Category Name</label>
                 <input

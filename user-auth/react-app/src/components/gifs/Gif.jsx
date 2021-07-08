@@ -1,9 +1,10 @@
 import React from 'react'
+import '../components.css'
 
 const Gif = ({ gif }) => {
     console.log('!!!!!!GIF:', gif)
     return (
-        <div>
+        <div className='content'>
             <img src={gif.images.original.url} alt={gif.title} />
             <a href={gif.url}>{gif.title}</a>
         </div>

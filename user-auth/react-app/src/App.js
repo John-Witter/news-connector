@@ -11,7 +11,6 @@ import Content from "./components/content/Content";
 import { authenticate } from "./store/session";
 
 function App() {
-  // const [authenticated, setAuthenticated] = useState(false);
   const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);
 
@@ -45,7 +44,6 @@ function App() {
         <ProtectedRoute path="/" exact={true} >
           <h1>My Home Page</h1>
           <Content />
-          {/* <Articles /> */}
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

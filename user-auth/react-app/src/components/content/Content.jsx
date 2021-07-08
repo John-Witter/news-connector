@@ -26,13 +26,18 @@ const Content = () => {
 
     return (
         <div>
-            {articles && articles.map(article => {
-                return <Article article={article} key={article.url} />
+            {articles && articles.map((article, idx) => {
+                return (
+                    <div>
+                        <Article article={article} key={article.url} />
+                        {idx % 2 === 0 && gifs[idx / 2] && <Gif gif={gifs[idx / 2]} key={gifs[idx / 2]}/>}
+                    </div>
+                )
             })}
 
-            {gifs && gifs.map(gif => {
-                return <Gif gif={gif} key={gif.id}/>
-            })}
+            {/* {gifs && gifs.map(gif => {
+            return 
+            })} */}
         </div>
     )
 }

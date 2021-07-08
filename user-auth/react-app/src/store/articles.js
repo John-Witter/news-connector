@@ -24,12 +24,21 @@ export default function ArticleReducer (state={}, action) {
 
     switch (action.type) {
         case READ_ARTICLES:
-            console.log('READ_ARTICLE action:', action.articles.articles.articles)
+            console.log('READ_ARTICLE action:', action)
             // news api articles
             let articles = action.articles.articles.articles
-            let gifs = action.articles.gifs.data
+            let gifs = action.articles.gifs
+            let gifs1 = []
+            for (let i = 0; i < gifs.length; i++) {
+                let iGifs = gifs[i].data
+                for (let j = 0; j < iGifs.length; j++) {
+                    let jGifs = iGifs[j]
+                    gifs1.push(jGifs)           
+                }
+            }
+            // console.log('!!!!!!!GIFS1:', gifs1)
             newState['articles'] = articles
-            newState['gifs'] = gifs
+            newState['gifs'] = gifs1
             return newState
         default:
             return state

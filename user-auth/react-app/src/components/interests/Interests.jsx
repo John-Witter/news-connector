@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addInterest, getAllInterests } from "../../store/interests";
 import UpdateInterests from "./UpdateInterests";
-import '../components.css'
+import '../content.css'
 
 const Interests = () => {
     const dispatch = useDispatch()

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../components.css'
+import './gifs.css'
 
 const Gif = ({ gif }) => {
     console.log('!!!!!!GIF:', gif)

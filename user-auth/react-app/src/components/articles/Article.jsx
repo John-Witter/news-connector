@@ -1,5 +1,6 @@
 import React from 'react'
-import '../components.css'
+import './articles.css'
+
 
 const Article = ({ article }) => {
     return (

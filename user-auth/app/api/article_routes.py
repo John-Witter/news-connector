@@ -20,7 +20,7 @@ def get_articles():
     tags = [tag.to_dict()['title'] for tag in tagsFromDB]
 
     # merge titles from tags and interests into one list
-    titles = tags + interests
+    titles = interests + tags
     print('!!!!!!titles length:', len(titles))
     print('!!!!!!titles:', titles)
 

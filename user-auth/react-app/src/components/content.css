@@ -1,12 +1,31 @@
+.content {
+    display: grid;
+    grid-template-areas:
+        "content";
+    
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* 
 content 
     div 
     (
-        div className="wrapper"
+        div className="container"
         (
             article 
             (
-                div 
+                div className="content article"
                 (
                     h2
                     img
@@ -16,7 +35,7 @@ content
             )
             gif 
             (
-                div 
+                div className="content gif"
                 (
                     img
                     a

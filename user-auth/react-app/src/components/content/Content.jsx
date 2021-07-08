@@ -26,7 +26,7 @@ const Content = () => {
     console.log('!!!!content:', content)
 
     return (
-        <div>
+        <div className="container">
             {articles && articles.map((article, idx) => {
                 return (
                     <div>

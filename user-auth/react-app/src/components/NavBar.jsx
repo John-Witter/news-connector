@@ -7,7 +7,7 @@ import './navbar.css'
 const NavBar = () => {
   return (
     <nav className='navContainer'>
-      <ul>
+      <ul className='navbar'>
         <li>
           <NavLink to="/" exact={true} activeClassName="active">
             Home
@@ -32,7 +32,7 @@ const NavBar = () => {
           <LogoutButton />
         </li>
         <li>
-          <Interests />
+          <Interests className='interests'/>
         </li>
 
       </ul>

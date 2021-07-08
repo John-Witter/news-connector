@@ -1,0 +1,47 @@
+.content {
+    display: grid;
+    grid-template-areas:
+        "content";
+    
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 
+content 
+    div 
+    (
+        div className="container"
+        (
+            article 
+            (
+                div className="content article"
+                (
+                    h2
+                    img
+                    p
+                )
+
+            )
+            gif 
+            (
+                div className="content gif"
+                (
+                    img
+                    a
+                )
+            )
+        )
+    )
+
+*/

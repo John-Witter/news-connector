@@ -1,0 +1,19 @@
+/* 
+    navbar links
+    interests
+*/
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+/* .interests {
+
+} */

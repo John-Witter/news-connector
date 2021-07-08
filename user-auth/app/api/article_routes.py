@@ -21,6 +21,7 @@ def get_articles():
 
     # merge titles from tags and interests into one list
     titles = tags + interests
+    print('!!!!!!titles length:', len(titles))
     print('!!!!!!titles:', titles)
 
     # 100 requests per day available
@@ -31,16 +32,24 @@ def get_articles():
 
     news_res = requests.get(news_url)
 
+    # Note: All API Keys start as beta keys, which are rate limited(42 reads per hour and 1000 searches/API calls per day.)
     giphy_api_key = 'jyp7w8WhK8aP2NwucT1vGpyUUYaiWhtc'
 
-    if len(titles) > 5:
-        titles = titles[-4:]
+    # get last 4 interests b/c giphy api limits the query length
+    # titles = titles[-5:]
+    # print('!!!!!!NEWtitles length:', len(titles))
+    # print('!!!!!!NEWtitles:', titles)
 
-    giphy_url = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphy_api_key + '&q=' + ' '.join(titles) + '&limit=100&offset=0&rating=g&lang=en'
+    gifs = []
+    for i in range(len(interests)):
+        giphy_url = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphy_api_key + '&q=' + interests[i] + '&limit=5&offset=0&rating=g&lang=en'
+        giphy_res = requests.get(giphy_url)
+        gifs.append(giphy_res.json())
+            
 
-    giphy_res = requests.get(giphy_url)
+
 
     # return {'gifs': '', 'articles': ''}
-    return {'gifs': giphy_res.json(), 'articles': news_res.json()} 
+    return {'gifs': gifs, 'articles': news_res.json()} 
     # return news_res.json()
     # return giphy_res.json()

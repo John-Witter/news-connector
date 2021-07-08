@@ -7,7 +7,6 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
-import Articles from "./components/articles/Articles";
 import Content from "./components/content/Content";
 import { authenticate } from "./store/session";
 

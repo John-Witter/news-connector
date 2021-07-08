@@ -5,7 +5,7 @@ import '../content.css'
 const Gif = ({ gif }) => {
     console.log('!!!!!!GIF:', gif)
     return (
-        <div className='content gif'>
+        <div className='gif'>
             <img src={gif.images.original.url} alt={gif.title} />
             <a href={gif.url}>{gif.title}</a>
         </div>

@@ -1,21 +1,34 @@
-.content {
-    display: grid;
-    grid-template-areas:
-        "content";
-    
+body {
+    /* max-width: 75%; */
 }
 
-.article {
+.parent {
+    display: flex;
+    flex-direction: column;
+    /* max-width: 75%; */
+    align-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 0 auto;
+}
+
+/* .content {
+} */
+
+.gif, .article {
+    /* max-width: 75%; */
+    grid-area: content;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid black;
 }
 
-.gif {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 /* 
 content 

@@ -36,7 +36,7 @@ export default function ArticleReducer (state={}, action) {
                     gifs1.push(jGifs)           
                 }
             }
-            // console.log('!!!!!!!GIFS1:', gifs1)
+
             newState['articles'] = articles
             newState['gifs'] = gifs1
             return newState

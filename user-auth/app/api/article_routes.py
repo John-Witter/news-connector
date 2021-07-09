@@ -24,8 +24,6 @@ def get_articles():
     # merge titles from tags and interests into one list
     titles = interests + tags
     random.shuffle(titles)
-    print('!!!!!!titles length:', len(titles))
-    print('!!!!!!titles:', titles)
 
     # 100 requests per day available
     news_api_key = '13bc774f3bb545d8935600ca47e4cfcf'
@@ -34,6 +32,9 @@ def get_articles():
            ) + '&language=en' + '&apiKey=' + news_api_key + '&pageSize=100'
 
     news_res = requests.get(news_url)
+    articles = news_res.json()['articles']
+    random.shuffle(articles)
+    
 
     # Note: All API Keys start as beta keys, which are rate limited(42 reads per hour and 1000 searches/API calls per day.)
     giphy_api_key = 'jyp7w8WhK8aP2NwucT1vGpyUUYaiWhtc'
@@ -46,8 +47,8 @@ def get_articles():
             
 
 
-
+    articles = {'articles': articles}
     # return {'gifs': '', 'articles': ''}
-    return {'gifs': gifs, 'articles': news_res.json()} 
+    return {'gifs': gifs, 'articles': articles}
     # return news_res.json()
     # return giphy_res.json()

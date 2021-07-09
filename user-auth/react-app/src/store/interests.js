@@ -136,7 +136,6 @@ export default function InterestReducer(state={}, action) {
             newState[action.interest.interests.id] = action.interest.interests
             return newState
         case UPDATE_INTEREST:
-            console.log('UPDATE_INTEREST action:', action)
             const interest = {
                 "id": action.interest.interestId,
                 "tite": action.interest.title,
@@ -145,13 +144,7 @@ export default function InterestReducer(state={}, action) {
             newState[interest.id] = interest
             return newState
         case DELETE_INTEREST:
-            console.log('DELETE_INTEREST action:', action)
-            console.log('INTEREST ID:', action.interest.interestId)
-            console.log('NewSTATE INTEREST ID:', newState[action.interest.interestId])
-
             delete newState[action.interest.interestId]
-            
-            console.log('newsState before after:', newState)
             return newState
         default:
             return state

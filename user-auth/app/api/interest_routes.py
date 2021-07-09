@@ -59,6 +59,4 @@ def delete_interest():
     interest = Interest.query.filter_by(id=interestId).first()
     db.session.delete(interest)
     db.session.commit()
-    print(f"!!!!!!DELETEFORM interest:")
-    print(interest.to_dict())
     return interest.to_dict()

@@ -22,9 +22,6 @@ const Content = () => {
         dispatch(loadArticles(userId))
     }, [dispatch, userId])
 
-    console.log('!!!!content Length:', Object.values(content).length)
-    console.log('!!!!content:', content)
-
     return (
         <div className='parent'>
             {articles && articles.map((article, idx) => {

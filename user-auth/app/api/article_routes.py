@@ -24,8 +24,6 @@ def get_articles():
     # merge titles from tags and interests into one list
     titles = interests + tags
     random.shuffle(titles)
-    print('!!!!!!titles length:', len(titles))
-    print('!!!!!!titles:', titles)
 
     # 100 requests per day available
     news_api_key = '13bc774f3bb545d8935600ca47e4cfcf'

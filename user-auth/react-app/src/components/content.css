@@ -5,27 +5,28 @@ body {
 .parent {
     display: flex;
     flex-direction: column;
-    /* max-width: 75%; */
-    align-content: center;
+    max-width: 50%;
+    margin: 0 auto;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    align-self: center;
-    margin: 0 auto;
+    align-items: center;
 }
 
 /* .content {
 } */
 
 .gif, .article {
-    /* max-width: 75%; */
-    grid-area: content;
     display: flex;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     border: 1px solid black;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    padding: 1rem 1rem;
 }
 
 

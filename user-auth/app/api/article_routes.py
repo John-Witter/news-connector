@@ -1,7 +1,7 @@
 from re import T
 from flask import Blueprint, jsonify, request
 from flask_login import current_user
-import requests, json
+import requests, json, random
 from app.models import db, Interest, Tag
 
 article_routes = Blueprint('articles', __name__)
@@ -14,13 +14,16 @@ def get_articles():
     # get  titles from user's interests
     interestsFromDB = Interest.query.filter_by(userId = current_user.id).all()
     interests = [title.to_dict()['title'] for title in interestsFromDB]
+    random.shuffle(interests)
 
     # get titles from tags
     tagsFromDB = Tag.query.all()
     tags = [tag.to_dict()['title'] for tag in tagsFromDB]
+    random.shuffle(tags)
 
     # merge titles from tags and interests into one list
     titles = interests + tags
+    random.shuffle(titles)
     print('!!!!!!titles length:', len(titles))
     print('!!!!!!titles:', titles)
 

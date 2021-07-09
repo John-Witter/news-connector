@@ -1,3 +1,8 @@
 img {
-    max-width: 25%;
+    max-width: 66%;
+}
+
+a {
+    text-decoration: none;
+    color: #7a49a5;
 }

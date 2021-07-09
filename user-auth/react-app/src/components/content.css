@@ -7,17 +7,15 @@ body {
         display: grid;
         grid-template-areas:
         "navContainer navContainer navContainer"
-        "interests parent parent"
-        "interests parent parent";
-        grid-template-columns: 20% 30% 30%;
+        "interests parent saved"
+        "interests parent saved";
+        grid-template-columns: 1fr 2fr 1fr;
 }
 
 .parent {
     grid-area: parent;
     display: flex;
     flex-direction: column;
-    /* max-width: 40%; */
-    margin: 0 auto;
 }
 
 .navContainer {
@@ -26,7 +24,10 @@ body {
 
 .interests {
     grid-area: interests;
-    /* max-width: 30%; */
+}
+
+.saved {
+    grid-area: saved;
 }
 
 .container {

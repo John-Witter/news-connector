@@ -8,7 +8,7 @@ const DeleteInterest = ({ userId, interest}) => {
         dispatch(removeInterest(userId, interest.id, interest.title))
     }
     return (
-        <button onClick={() => handleDelete()}>
+        <button onClick={() => handleDelete()} className='deleteBtn'>
             Delete
         </button>
     )

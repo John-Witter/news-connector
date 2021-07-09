@@ -1,0 +1,13 @@
+.deleteBtn {
+    /* display: inline-block; */
+    margin: 0 5px;
+}
+
+.editBtn {
+    margin: 0 5px;
+}
+
+.interestForm {
+    display: flex;
+    flex-direction: row;
+}

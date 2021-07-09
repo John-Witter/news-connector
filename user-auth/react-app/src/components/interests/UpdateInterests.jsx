@@ -30,7 +30,7 @@ const UpdateInterests = ({ userId, interest }) => {
     }
 
     return (
-        <div>
+        <div className='interestForm'>
             < form onSubmit={handleEditConfirm}>
                 <li>
 
@@ -54,6 +54,7 @@ const UpdateInterests = ({ userId, interest }) => {
                         </>
                     )}
                     <button
+                    className='editBtn'
                         onClick={(e) => {
                             e.preventDefault()
                             editButtonText === 'Cancel' ? setEditButtonText('Edit') : setEditButtonText('Cancel')

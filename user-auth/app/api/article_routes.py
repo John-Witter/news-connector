@@ -38,11 +38,6 @@ def get_articles():
     # Note: All API Keys start as beta keys, which are rate limited(42 reads per hour and 1000 searches/API calls per day.)
     giphy_api_key = 'jyp7w8WhK8aP2NwucT1vGpyUUYaiWhtc'
 
-    # get last 4 interests b/c giphy api limits the query length
-    # titles = titles[-5:]
-    # print('!!!!!!NEWtitles length:', len(titles))
-    # print('!!!!!!NEWtitles:', titles)
-
     gifs = []
     for i in range(len(interests)):
         giphy_url = 'https://api.giphy.com/v1/gifs/search?api_key=' + giphy_api_key + '&q=' + interests[i] + '&limit=5&offset=0&rating=g&lang=en'

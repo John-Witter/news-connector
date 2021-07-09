@@ -4,9 +4,11 @@ import '../content.css'
 
 const Gif = ({ gif }) => {
     return (
-        <div className='gif'>
+        <div className='gif content-container'>
             <h2><a href={gif.url}>{gif.title}</a></h2>
-            <img src={gif.images.original.url} alt={gif.title} />
+            <a href={gif.url}>
+                <img src={gif.images.original.url} alt={gif.title} />
+            </a>
         </div>
     )
 }

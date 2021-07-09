@@ -6,3 +6,12 @@ a {
     text-decoration: none;
     color: #7a49a5;
 }
+
+p {
+    font-weight: bold;
+}
+
+a:hover {
+    font-size: larger;
+    color: #553373;
+}

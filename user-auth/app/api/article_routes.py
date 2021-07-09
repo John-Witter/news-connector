@@ -32,6 +32,7 @@ def get_articles():
            ) + '&language=en' + '&apiKey=' + news_api_key + '&pageSize=100'
 
     news_res = requests.get(news_url)
+    print('!!!!!!news_res:', news_res)
     articles = news_res.json()['articles']
     random.shuffle(articles)
     

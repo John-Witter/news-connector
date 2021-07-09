@@ -27,6 +27,7 @@ const Interests = () => {
         e.preventDefault()
         dispatch(addInterest(userId, title))
         setTitle('')
+        window.location.reload()
     }
 
     return (

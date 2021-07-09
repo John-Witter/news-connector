@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addInterest, getAllInterests } from "../../store/interests";
 import UpdateInterests from "./UpdateInterests";
 import '../content.css'
+import './interests.css'
 
 const Interests = () => {
     const dispatch = useDispatch()
@@ -15,7 +16,7 @@ const Interests = () => {
         userId = user["id"];
     }
 
-    useEffect(() => {        
+    useEffect(() => {
         if (!userId) return
         dispatch(getAllInterests(user['id']))
     }, [dispatch, user])
@@ -26,21 +27,10 @@ const Interests = () => {
         e.preventDefault()
         dispatch(addInterest(userId, title))
         setTitle('')
-    }    
+    }
 
     return (
-        <div className='sidebar'>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="titleInput">Category Name</label>
-                <input
-                    type="text"
-                    id="titleInput"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-                <button type="submit">Add to Newsfeed</button>
-            </form>
-
+        <div className='interests'>
             <div>
                 <p
                     value={viewInterests}
@@ -51,13 +41,25 @@ const Interests = () => {
                 {viewInterests === 'Hide' && !user && (
                     <p>Log in to add interests to your newsfeed!</p>
                 )}
-                {viewInterests === 'Hide' && user &&(                    
-                    <ul>
-                        {Object.values(allInterests).map(interest => (
-                           <UpdateInterests userId={userId} interest={interest} key={interest.id} />
-                        )
-                        )}
-                    </ul>
+                {viewInterests === 'Hide' && user && (
+                    <div>
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                id="titleInput"
+                                placeholder="add new interest"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                            <button type="submit">Add to Feed</button>
+                        </form>
+                        <ul>
+                            {Object.values(allInterests).map(interest => (
+                                <UpdateInterests userId={userId} interest={interest} key={interest.id} />
+                            )
+                            )}
+                        </ul>
+                    </div>
                 )}
             </div>
         </div>

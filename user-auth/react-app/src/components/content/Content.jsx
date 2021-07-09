@@ -26,7 +26,7 @@ const Content = () => {
         <div className='parent'>
             {articles && articles.map((article, idx) => {
                 return (
-                    <div className='container'>
+                    <div className='container' key={idx}>
                         <Article article={article} key={article.url} />
                         {idx % 2 === 0 && gifs[idx / 2] && <Gif gif={gifs[idx / 2]} key={gifs[idx / 2]}/>}
                     </div>

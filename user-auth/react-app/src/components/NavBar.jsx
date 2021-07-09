@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
-import Interests from './interests/Interests'
 import './navbar.css'
+import './content.css'
 
 const NavBar = () => {
   return (
@@ -30,9 +30,6 @@ const NavBar = () => {
         </li>
         <li>
           <LogoutButton />
-        </li>
-        <li>
-          <Interests className='interests'/>
         </li>
 
       </ul>

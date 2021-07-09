@@ -1,17 +1,35 @@
+h2 {
+    font-size: 16px;
+    color: #7e3eb3;
+}
+
 img {
     max-width: 66%;
+    border-radius: 1rem;
 }
 
 a {
     text-decoration: none;
-    color: #7a49a5;
+    color: #7e3eb3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 p {
     font-weight: bold;
 }
 
-a:hover {
-    font-size: larger;
-    color: #553373;
+.description {
+    font-weight: bold;
+    word-wrap: break-word;
+    text-align: center;
+    padding: 1rem 0;
+    max-width: 80%;
 }
+
+h2:hover {
+    font-size: larger;
+    color: #8a51ba;
+}
+

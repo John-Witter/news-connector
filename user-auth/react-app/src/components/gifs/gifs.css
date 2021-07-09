@@ -1,7 +1,19 @@
+h2 {
+    font-size: 16px;
+    color: #7e3eb3;
+}
+
 img { 
     max-width: 66%;
 }
 
 a {
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+h2:hover {
+    font-size: larger;
+    color: #8a51ba;
 }

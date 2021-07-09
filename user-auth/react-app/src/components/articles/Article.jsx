@@ -5,10 +5,14 @@ import '../content.css'
 
 const Article = ({ article }) => {
     return (
-        <div className='article'>
+        <div className='article content-container'>
             <h2><a href={article.url}>{article.title}</a></h2>
-            <img src={article.urlToImage} alt={article.title} />
-            <p>{article.description}</p>
+            <a href={article.url}>
+                <img src={article.urlToImage} alt={article.title} />
+            </a>
+            <div className='description'>
+                {article.description}
+            </div>
         </div>
     )
 }

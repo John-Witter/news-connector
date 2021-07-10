@@ -8,8 +8,8 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import User from "./components/User";
 import Content from "./components/content/Content";
 import Interests from "./components/interests/Interests";
-import Saved from "./components/saved/Saved";
 import Title from "./components/title/Title";
+import SavedList from "./components/saved/SavedList";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
         <ProtectedRoute path="/" exact={true} >
           <Title />
           <Content />
-          <Saved />
+          <SavedList />
           <Interests />
         </ProtectedRoute>
       </Switch>

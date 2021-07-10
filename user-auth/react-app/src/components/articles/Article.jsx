@@ -1,4 +1,5 @@
 import React from 'react'
+import Saved from '../saved/AddToSaved'
 import './articles.css'
 import '../content.css'
 
@@ -13,6 +14,7 @@ const Article = ({ article }) => {
             <div className='description'>
                 {article.description}
             </div>
+            <Saved />
         </div>
     )
 }

@@ -1,10 +1,17 @@
 // constants
 const READ_ARTICLES = 'articles/LOAD_ARTICLES'
+const READ_SAVED_ARTICLES = 'articles/READ_SAVED_ARTICLES'
 
 // actions
 const readArticles = (articles) => ({
     type: READ_ARTICLES,
     articles
+})
+
+const readSavedArticles = (articles) => ({
+    type: READ_SAVED_ARTICLES,
+    articles
+
 })
 
 // thunks

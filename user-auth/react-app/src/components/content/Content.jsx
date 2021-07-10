@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadArticles } from "../../store/articles";
 import Article from '../articles/Article';
 import Gif from '../gifs/Gif';
+import Weather from '../weather/Weather';
 import '../content.css'
 
 const Content = () => {
@@ -17,18 +18,19 @@ const Content = () => {
         userId = user['id']
     }
 
-    useEffect(() => {
-        if (!userId) return
-        dispatch(loadArticles(userId))
-    }, [dispatch, userId])
+    // useEffect(() => {
+    //     if (!userId) return
+    //     dispatch(loadArticles(userId))
+    // }, [dispatch, userId])
 
     return (
         <div className='parent'>
+            <Weather />
             {articles && articles.map((article, idx) => {
                 return (
                     <div className='container' key={idx}>
-                        <Article article={article} key={article.url} />
-                        {idx % 2 === 0 && gifs[idx / 2] && <Gif gif={gifs[idx / 2]} key={gifs[idx / 2]}/>}
+                        {/* <Article article={article} key={article.url} />
+                        {idx % 2 === 0 && gifs[idx / 2] && <Gif gif={gifs[idx / 2]} key={gifs[idx / 2]}/>} */}
                         {/* <div className='saveBtn'>
                             🤍
                         </div> */}

@@ -4,18 +4,17 @@ const Weather = () => {
     const [lat, setLat] = useState([])
     const [long, setLong] = useState([])
 
-    useEffect(() => {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            setLat(position.coords.latitude)
-            setLong(position.coords.longitude)
-        })
-    }, [lat, long])
+    ipLocation('', function (err, myLocation) {
+        console.dir(myLocation)
+    })
 
-    console.log('!!!!!!Lat', lat)
-    console.log('!!!!!!Long', long)
-
+    console.log("Latitude is:", lat)
+    console.log("Longitude is:", long)
+    
     return (
         <div>
+            <h1>Long {long}</h1>
+            <h1>Lat {lat}</h1>
         </div>
     )
 }

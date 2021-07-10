@@ -24,10 +24,16 @@ body {
 
 .interests {
     grid-area: interests;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .saved {
     grid-area: saved;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {

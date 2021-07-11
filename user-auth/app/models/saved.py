@@ -1,6 +1,4 @@
-from enum import unique
 from .db import db
-# from .user import User
 
 class Saved(db.Model):
     __tablename__ = 'saved'

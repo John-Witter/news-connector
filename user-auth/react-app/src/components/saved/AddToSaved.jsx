@@ -11,14 +11,11 @@ const AddToSaved = ({ item }) => {
     const savedArticles = useSelector(state => state.saved)
     const content = useSelector(state => state)
     const [savedText, setSavedText] = useState('Add to Saved')    
-
-    
-    console.log('SAVEDARTICLES:', savedArticles)
     
     const handleAddToSaved = () => {
         //todo
         //check if article is already saved first
-
+        
         if (savedText === 'Add to Saved') {
             let {title, url, imageURL, description} = item
             dispatch(addToSaved(userId, url, imageURL, title, description))

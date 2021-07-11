@@ -52,6 +52,8 @@ export const loadSavedArticles = () => async (dispatch) => {
     }
 }
 
+export const removeFromSave = ()
+
 // reducer
 export default function SavedReducer (state={}, action) {
     let newState = {...state}
@@ -68,6 +70,9 @@ export default function SavedReducer (state={}, action) {
         case POST_SAVED_ARTICLE:
             console.log("POST_SAVED_ARTICLE action:", action)
             newState[action.article.id] = action.article
+            return newState
+        case DELETE_SAVED_ARTICLE:
+            delete newState[action.article.id]
             return newState
         default:
             return state

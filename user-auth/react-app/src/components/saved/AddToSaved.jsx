@@ -9,17 +9,13 @@ const AddToSaved = ({ item }) => {
     const user = useSelector(state => state.session.user)
     let userId = user['id']
     const savedArticles = useSelector(state => state.saved)
-    const content = useSelector(state => state)
     const [savedText, setSavedText] = useState('Add to Saved')    
 
     
     useEffect(() => {
         //if item is in store, set text to Remove from Saved
         Object.values(savedArticles).forEach(article => {
-            console.log('article:', article)
-            console.log('item:', item)
-            if(article['itemURL'] === item['url']) {
-                console.log('item is saved:', item)
+            if(article['itemURL'] === item['url']) {                
                 setSavedText('Remove from Saved')
             }
         })
@@ -28,17 +24,14 @@ const AddToSaved = ({ item }) => {
     const handleAddToSaved = () => {
         //todo
         //check if article is already saved first
-        let {title, url, imageURL, description} = item
-        console.log('savedText:', savedText)
-        if (savedText === 'Remove from Saved') {
-            console.log('dispatch(removeFromSaved(userId, url, imageURL, title, description))')
+        let {title, url, imageURL, description} = item        
+        if (savedText === 'Remove from Saved') {            
             dispatch(removeFromSaved(userId, url, imageURL, title, description))
             setSavedText('Add to Saved')
             return
         }
         
-        if (savedText === 'Add to Saved') {
-            console.log('dispatch(addToSaved(userId, url, imageURL, title, description))')
+        if (savedText === 'Add to Saved') {            
             dispatch(addToSaved(userId, url, imageURL, title, description))
             setSavedText('Remove from Saved')
             return

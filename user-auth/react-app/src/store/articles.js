@@ -1,6 +1,6 @@
 // constants
 const READ_ARTICLES = 'articles/LOAD_ARTICLES'
-const READ_SAVED_ARTICLES = 'articles/READ_SAVED_ARTICLES'
+
 
 // actions
 const readArticles = (articles) => ({
@@ -8,11 +8,6 @@ const readArticles = (articles) => ({
     articles
 })
 
-const readSavedArticles = (articles) => ({
-    type: READ_SAVED_ARTICLES,
-    articles
-
-})
 
 // thunks
 export const loadArticles = (userId) => async (dispatch) => {
@@ -25,7 +20,8 @@ export const loadArticles = (userId) => async (dispatch) => {
     }
 }
 
-//reducer
+
+// reducer
 export default function ArticleReducer (state={}, action) {
     let newState = {...state}
 

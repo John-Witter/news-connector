@@ -4,12 +4,14 @@ import session from "./session"
 import InterestReducer from "./interests";
 import ArticleReducer from "./articles";
 import SavedReducer from "./saved";
+import DefaultReducer from "./default";
 
 const rootReducer = combineReducers({
     session,
     interest: InterestReducer,
     article: ArticleReducer,
-    saved: SavedReducer
+    saved: SavedReducer,
+    default: DefaultReducer
 });
 
 

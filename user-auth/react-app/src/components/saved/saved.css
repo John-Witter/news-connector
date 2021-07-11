@@ -3,6 +3,13 @@
 }
 
 .addToSavedText {
-    border: 1px solid black;
+    border: 3px solid #C3C1B4;
     color: #7e3eb3;
+    padding: .5rem;
+}
+
+.addToSavedText:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    color: #4b256b;
 }

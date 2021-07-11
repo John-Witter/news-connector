@@ -16,10 +16,19 @@
 
 .demoBtn {
     color: #7E3EB3;
+    font-size: 1.5rem;
+}
+
+.navbar li:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    color: #4b256b;
 }
 
 .demoBtn:hover {
     cursor: pointer;
+    font-weight: bolder;
+    color: #4b256b;
 }
 
 /* .interests {

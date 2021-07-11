@@ -13,5 +13,9 @@
 
 .title:hover {
     font-weight: bolder;
-    color: #582b7d;
+    color: #4b256b;
+}
+
+a {
+    font-size: 1.5rem;
 }

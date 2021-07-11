@@ -18,7 +18,7 @@ const Default = () => {
                 return (
                     <div key={item.id} className='content-container'>
                         <h2><a href={item.itemURL}>{item.title}</a></h2>
-                        <a href={item.url}>
+                        <a href={item.itemURL}>
                             <img src={item.imageURL} alt={item.title} />
                         </a>
                         {item.description && (<div className='description'>{item.description}</div>)}

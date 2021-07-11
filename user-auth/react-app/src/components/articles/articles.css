@@ -1,7 +1,7 @@
-h2 {
+/* h2 {
     font-size: 16px;
     color: #7e3eb3;
-}
+} */
 
 img {
     max-width: 66%;
@@ -30,8 +30,8 @@ p {
     font-size: 14px;
 }
 
-h2:hover {
-    font-weight: bold;
-    color: #8a51ba;
+a:hover {
+    font-weight: bolder;
+    color: #4b256b;
 }
 

@@ -1,7 +1,8 @@
 from .db import db
 
-class Saved(db.Model):
-    __tablename__ = 'saved'
+
+class Default(db.Model):
+    __tablename__ = 'default'
 
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)

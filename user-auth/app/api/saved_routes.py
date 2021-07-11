@@ -21,7 +21,10 @@ def post_to_saved():
     if form.validate_on_submit():
         new_article = Saved(
             userId = form.data['userId'],
-            itemURL = form.data['itemURL']
+            itemURL = form.data['itemURL'],
+            imageURL = form.data['imageURL'],
+            title = form.data['title'],
+            description = form.data['description']
         )
         db.session.add(new_article)
         db.session.commit()

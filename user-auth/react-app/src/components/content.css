@@ -11,6 +11,7 @@ body {
         display: grid;
         grid-template-areas:
         "navContainer navContainer navContainer"
+        "titleContainer titleContainer titleContainer"
         "interests parent saved"
         "interests parent saved";
         grid-template-columns: 1fr 2fr 1fr;
@@ -25,6 +26,10 @@ body {
 
 .navContainer {
     grid-area: navContainer;
+}
+
+.titleContainer {
+    grid-area: titleContainer;
 }
 
 .interests {

@@ -42,8 +42,8 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} >
           <Title />
-          <Content />
           <SavedList />
+          <Content />
           <Interests />
         </ProtectedRoute>
       </Switch>

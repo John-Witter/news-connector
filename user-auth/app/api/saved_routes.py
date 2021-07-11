@@ -40,9 +40,12 @@ def get_saved(id):
 
 
 # deletes an article from the user's saved articles list
-@saved_routes.route('/<int:id>', methods=['DELETE'])
-def delete_from_saved(id):
-        article = Saved.query.filter_by(id = id).first()
+@saved_routes.route('/', methods=['DELETE'])
+def delete_from_saved():
+        form = SavedForm()
+        itemURL = form.data['itemURL']
+
+        article = Saved.query.filter_by(itemURL = itemURL).first()
 
         db.session.delete(article)
         db.session.commit()

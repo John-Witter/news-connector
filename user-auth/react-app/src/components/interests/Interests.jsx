@@ -30,6 +30,10 @@ const Interests = () => {
         window.location.reload()
     }
 
+    if (!user) {
+        return null
+    }
+
     return (
         <div className='interests'>
             <div>

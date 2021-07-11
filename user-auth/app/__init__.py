@@ -12,6 +12,7 @@ from .api.interest_routes import interest_routes
 from .api.saved_routes import saved_routes
 from .api.tag_routes import tag_routes
 from .api.article_routes import article_routes
+from .api.default_routes import default_routes
 
 from .seeds import seed_commands
 
@@ -39,6 +40,7 @@ app.register_blueprint(interest_routes, url_prefix='/api/interests')
 app.register_blueprint(tag_routes, url_prefix='/api/tags')
 app.register_blueprint(saved_routes, url_prefix='/api/saved')
 app.register_blueprint(article_routes, url_prefix='/api/articles')
+app.register_blueprint(default_routes, url_prefix='/api/defaults')
 db.init_app(app)
 Migrate(app, db)
 

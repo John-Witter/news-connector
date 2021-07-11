@@ -12,7 +12,7 @@ class Default(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "url": self.itemURL,
+            "url": self.url,
             "title": self.title,
             "description": self.description
         }

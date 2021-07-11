@@ -95,7 +95,6 @@ export default function SavedReducer (state={}, action) {
         case DELETE_SAVED_ARTICLE:
             console.log("DELETE_SAVED_ARTICLE action:", action)
             delete newState[action.article.id]
-            console.log("AFTER DELETE_SAVED_ARTICLE action:", action)
             return newState
         default:
             return state

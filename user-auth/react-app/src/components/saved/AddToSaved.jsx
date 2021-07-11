@@ -16,7 +16,9 @@ const AddToSaved = ({ item }) => {
     console.log('SAVEDARTICLES:', savedArticles)
     
     const handleAddToSaved = () => {
-        
+        //todo
+        //check if article is already saved first
+
         if (savedText === 'Add to Saved') {
             let {title, url, imageURL, description} = item
             dispatch(addToSaved(userId, url, imageURL, title, description))

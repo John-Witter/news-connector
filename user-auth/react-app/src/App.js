@@ -5,7 +5,6 @@ import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import User from "./components/User";
 import Content from "./components/content/Content";
 import Interests from "./components/interests/Interests";
 import Title from "./components/title/Title";
@@ -37,15 +36,12 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path="/users/:userId" exact={true}>
-          <User />
-        </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} >
+        <Route path="/" exact={true} >
           <Title />
           <SavedList />
           <Content />
           <Interests />
-        </ProtectedRoute>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

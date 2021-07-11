@@ -23,7 +23,7 @@ const NavBar = () => {
       <ul className='navbar'>
         <li>
           <NavLink to="/" exact={true} activeClassName="active">
-            Home
+            news-connector
           </NavLink>
         </li>
         {!user && <li>

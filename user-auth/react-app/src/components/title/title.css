@@ -1,3 +1,21 @@
+.titleContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
 .title {
-    color: black;
+    color: #7E3EB3;
+    font-family: cursive;
+}
+
+.title:hover {
+    font-weight: bolder;
+    color: #4b256b;
+}
+
+a {
+    font-size: 1.5rem;
 }

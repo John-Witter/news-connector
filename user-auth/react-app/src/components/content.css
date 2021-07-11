@@ -4,16 +4,18 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+    width: 100%;
 }
 
 #root {
         display: grid;
         grid-template-areas:
         "navContainer navContainer navContainer"
+        "titleContainer titleContainer titleContainer"
         "interests parent saved"
         "interests parent saved";
         grid-template-columns: 1fr 2fr 1fr;
+        width: 100%;
 }
 
 .parent {
@@ -21,10 +23,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-top: 1px solid #C3C1B4;
+    align-self: center;
+    padding: 0 5rem;
 }
 
 .navContainer {
     grid-area: navContainer;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #C3C1B4;
+}
+
+.titleContainer {
+    grid-area: titleContainer;
 }
 
 .interests {

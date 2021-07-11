@@ -5,7 +5,7 @@ import '../content.css'
 
 
 const Article = ({ article }) => {
-
+    article['itemURL'] = article['url']
     article['imageURL'] = article['urlToImage']
 
     return (

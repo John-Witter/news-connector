@@ -15,9 +15,9 @@ console.log('defaults:', defaults)
             {defaults && Object.values(defaults).map(item => {
                 return (
                     <div key={item.id}>
-                        <h2><a href={item.url}>{item.title}</a></h2>
+                        <h2><a href={item.itemURL}>{item.title}</a></h2>
                         <a href={item.url}>
-                            <img src={item.url} alt={item.title} />
+                            <img src={item.imageURL} alt={item.title} />
                         </a>
                         {item.description && (<div>{item.description}</div>)}
                     </div>

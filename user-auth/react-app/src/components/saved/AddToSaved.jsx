@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { addToSaved } from '../../store/saved';
+import { addToSaved, loadSavedArticles } from '../../store/saved';
 import '../content.css'
 import './saved.css'
 
@@ -8,9 +8,16 @@ const AddToSaved = ({ item }) => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     let userId = user['id']
+    // const savedArticles = useSelector(state => state.saved)
     const content = useSelector(state => state)
     const [savedText, setSavedText] = useState('Add to Saved')    
 
+    useEffect(() => {
+        dispatch(loadSavedArticles())
+    }, [dispatch])
+    
+    // console.log('SAVEDARTICLES:', savedArticles)
+    
     const handleAddToSaved = () => {
         
         if (savedText === 'Add to Saved') {
@@ -19,7 +26,7 @@ const AddToSaved = ({ item }) => {
         }
 
         else if (savedText === 'Remove from Saved') {
-            
+
         }
 
         // change text to display if item is saved or not

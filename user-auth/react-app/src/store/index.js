@@ -3,11 +3,13 @@ import thunk from "redux-thunk";
 import session from "./session"
 import InterestReducer from "./interests";
 import ArticleReducer from "./articles";
+import SavedReducer from "./saved";
 
 const rootReducer = combineReducers({
     session,
     interest: InterestReducer,
     article: ArticleReducer,
+    saved: SavedReducer
 });
 
 

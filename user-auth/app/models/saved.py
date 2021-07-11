@@ -1,3 +1,4 @@
+from enum import unique
 from .db import db
 # from .user import User
 
@@ -6,7 +7,10 @@ class Saved(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    itemURL = db.Column(db.String, nullable=False)
+    itemURL = db.Column(db.String, nullable=False, unique=True)
+    imageURL = db.Column(db.String, nullable=False)
+    title = db.Column(db.String, nullable=False)
+    description = db.Column(db.String)
 
     def to_dict(self):
         return {

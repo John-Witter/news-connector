@@ -7,6 +7,7 @@ const SavedList = () => {
     const user = useSelector(state => state.session.user)
 
     useEffect(() => {
+        if(!user) return 
         dispatch(loadSavedArticles())
     }, [dispatch])
 

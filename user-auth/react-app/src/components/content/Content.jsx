@@ -31,7 +31,7 @@ const Content = () => {
     return (
         <div className='parent'>
             {/* <Weather /> */}
-            {articles && articles.map((article, idx) => {
+            {user && articles && articles.map((article, idx) => {
                 return (
                     <div className='container' key={idx}>
                         <Article article={article} key={article.url} />

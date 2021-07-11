@@ -21,11 +21,6 @@ const NavBar = () => {
   return (
     <nav className='navContainer'>
       <ul className='navbar'>
-        <li>
-          <NavLink to="/" exact={true} activeClassName="active">
-            news-connector
-          </NavLink>
-        </li>
         {!user && <li>
           <NavLink to="/login" exact={true} activeClassName="active">
             Login

@@ -1,5 +1,4 @@
 .titleContainer {
-    color: #000;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -8,5 +7,11 @@
 }
 
 .title {
-    color: black;
+    color: #7E3EB3;
+    font-family: cursive;
+}
+
+.title:hover {
+    font-weight: bolder;
+    color: #582b7d;
 }

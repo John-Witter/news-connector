@@ -27,10 +27,11 @@ p {
     text-align: center;
     padding: 1rem 0;
     max-width: 80%;
+    font-size: 14px;
 }
 
 h2:hover {
-    font-size: larger;
+    font-weight: bold;
     color: #8a51ba;
 }
 

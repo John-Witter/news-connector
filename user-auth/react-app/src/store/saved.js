@@ -64,6 +64,7 @@ export default function SavedReducer (state={}, action) {
             return newState
         case POST_SAVED_ARTICLE:
             console.log("POST_SAVED_ARTICLE action:", action)
+            newState[action.article.id] = action.article
             return newState
         default:
             return state

@@ -12,21 +12,14 @@ const AddToSaved = ({ item }) => {
     const [savedText, setSavedText] = useState('Add to Saved')    
 
     const handleAddToSaved = () => {
-        // if savedText === 'Add to Saved' dispatch(postToSaved(userId, itemURL))
-        // else dispatch(deleteFromSaved)
         
         if (savedText === 'Add to Saved') {
             let {title, url, imageURL, description} = item
-            
-            console.log('title:', title)
-            console.log('url:', url)
-            console.log('imageURL:', imageURL)
-            console.log('description:', description)
-            console.log('CLIKED: ', savedText)
-            console.log('ITEM:', item)
-
-
             dispatch(addToSaved(userId, url, imageURL, title, description))
+        }
+
+        else if (savedText === 'Remove from Saved') {
+            
         }
 
         // change text to display if item is saved or not

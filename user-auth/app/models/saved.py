@@ -17,4 +17,7 @@ class Saved(db.Model):
             "id": self.id,
             "userId": self.userId,
             "itemURL": self.itemURL,
+            "imageURL": self.imageURL,
+            "title": self.title,
+            "description": self.description
         }

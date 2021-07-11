@@ -1,11 +1,12 @@
 import React from 'react'
-import Saved from '../saved/AddToSaved'
+import AddToSaved from '../saved/AddToSaved'
 import './articles.css'
 import '../content.css'
 
 
 const Article = ({ article }) => {
-    console.log('!!!!!!ARTICLE:', article)
+
+    article['imageURL'] = article['urlToImage']
 
     return (
         <div className='article content-container'>
@@ -16,7 +17,7 @@ const Article = ({ article }) => {
             <div className='description'>
                 {article.description}
             </div>
-            <Saved itemURL={article.url}/>
+            <AddToSaved item={article}/>
         </div>
     )
 }

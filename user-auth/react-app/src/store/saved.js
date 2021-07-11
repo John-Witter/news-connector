@@ -21,7 +21,7 @@ const deleteSavedArticle = (article) => ({
 })
 
 // thunks 
-export const addToSaved = (userId, itemURL) => async (dispatch) => {
+export const addToSaved = (userId, itemURL, imageURL, title, description) => async (dispatch) => {
     const res = await fetch('/api/saved/', {
         method: "POST",
         headers: {
@@ -29,7 +29,10 @@ export const addToSaved = (userId, itemURL) => async (dispatch) => {
         }, 
         body: JSON.stringify({
             userId,
-            itemURL
+            itemURL,
+            imageURL,
+            title,
+            description
         })
     })
 
@@ -56,11 +59,15 @@ export default function SavedReducer (state={}, action) {
     switch (action.type) {
         case READ_SAVED_ARTICLES:
             console.log('READ_SAVED_ARTICLES action:', action)     
-            const articles = action.articles.articles
-            newState['saved'] = articles       
+            const articles = action.articles.saved
+            console.log('READ_SAVED_ARTICLES articles:', articles)
+            articles.forEach(article => {
+                newState[article.id] = article
+            })
             return newState
         case POST_SAVED_ARTICLE:
             console.log("POST_SAVED_ARTICLE action:", action)
+            newState[action.article.id] = action.article
             return newState
         default:
             return state

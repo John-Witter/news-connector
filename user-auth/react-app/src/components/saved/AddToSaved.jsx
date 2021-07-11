@@ -8,15 +8,12 @@ const AddToSaved = ({ item }) => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     let userId = user['id']
-    // const savedArticles = useSelector(state => state.saved)
+    const savedArticles = useSelector(state => state.saved)
     const content = useSelector(state => state)
     const [savedText, setSavedText] = useState('Add to Saved')    
 
-    useEffect(() => {
-        dispatch(loadSavedArticles())
-    }, [dispatch])
     
-    // console.log('SAVEDARTICLES:', savedArticles)
+    console.log('SAVEDARTICLES:', savedArticles)
     
     const handleAddToSaved = () => {
         

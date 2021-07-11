@@ -1,7 +1,7 @@
 // constants
 const READ_SAVED_ARTICLES = 'articles/READ_SAVED_ARTICLES'
 const POST_SAVED_ARTICLE = 'articles/POST_SAVED_ARTICLE'
-const DELETE_SAVED_ARTICLE = 'articles/POST_SAVED_ARTICLE'
+const DELETE_SAVED_ARTICLE = 'articles/DELETE_SAVED_ARTICLE'
 
 
 // actions
@@ -22,6 +22,7 @@ const deleteSavedArticle = (article) => ({
 
 // thunks 
 export const addToSaved = (userId, itemURL, imageURL, title, description) => async (dispatch) => {
+    console.log('inside addToSaved')
     const res = await fetch('/api/saved/', {
         method: "POST",
         headers: {
@@ -52,7 +53,27 @@ export const loadSavedArticles = () => async (dispatch) => {
     }
 }
 
-export const removeFromSave = ()
+export const removeFromSaved = (userId, itemURL, imageURL, title, description) => async (dispatch) => {
+    console.log('insede removeFromSaved')
+    const res = await fetch('/api/saved/', {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            userId,
+            itemURL,
+            imageURL,
+            title,
+            description
+        })
+    })
+
+    if (res.ok) {
+        const data = await res.json()
+        dispatch(deleteSavedArticle(data))
+    }
+}
 
 // reducer
 export default function SavedReducer (state={}, action) {
@@ -72,7 +93,9 @@ export default function SavedReducer (state={}, action) {
             newState[action.article.id] = action.article
             return newState
         case DELETE_SAVED_ARTICLE:
+            console.log("DELETE_SAVED_ARTICLE action:", action)
             delete newState[action.article.id]
+            console.log("AFTER DELETE_SAVED_ARTICLE action:", action)
             return newState
         default:
             return state

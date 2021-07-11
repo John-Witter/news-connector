@@ -41,7 +41,7 @@ def get_saved(id):
 
 # deletes an article from the user's saved articles list
 @saved_routes.route('/', methods=['DELETE'])
-def delete_from_saved(id):
+def delete_from_saved():
         form = SavedForm()
         itemURL = form.data['itemURL']
 

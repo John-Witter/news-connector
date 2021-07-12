@@ -25,11 +25,11 @@ const Weather = () => {
             const proxy = "https://cors-anywhere.herokuapp.com/";
             try {
                 const res = await fetch(`${proxy}api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`)
-                console.log('getWeatherByCoordinates res:', res)
+                // console.log('getWeatherByCoordinates res:', res)
                 const data = await res.json()
-                console.log('getWeatherByCoordinates data:', data)
+                // console.log('getWeatherByCoordinates data:', data)
             } catch (error) {                
-                console.log('err:', error)
+                // console.log('err:', error)
             }
         }
         getWeatherByCoordinates()

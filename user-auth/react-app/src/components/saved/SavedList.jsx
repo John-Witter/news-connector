@@ -14,8 +14,6 @@ const SavedList = () => {
         dispatch(loadSavedArticles())
     }, [dispatch])
 
-    console.log('savedArticles:', savedArticles)
-
     if (!user) {
         return null
     }

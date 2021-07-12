@@ -40,7 +40,7 @@ app.register_blueprint(interest_routes, url_prefix='/api/interests')
 app.register_blueprint(tag_routes, url_prefix='/api/tags')
 app.register_blueprint(saved_routes, url_prefix='/api/saved')
 app.register_blueprint(article_routes, url_prefix='/api/articles')
-app.register_blueprint(default_routes, url_prefix='/api/defaults')
+app.register_blueprint(default_routes, url_prefix='/api/homeData')
 db.init_app(app)
 Migrate(app, db)
 

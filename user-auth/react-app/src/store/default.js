@@ -9,7 +9,7 @@ const readDefault = (articles) => ({
 
 // thunks
 export const loadDefault = () => async (dispatch) => {
-    const res = await fetch ('/api/defaults/')
+    const res = await fetch ('/api/homeData/')
 
     if (res.ok) {
         const data = await res.json()

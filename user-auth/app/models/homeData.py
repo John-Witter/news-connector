@@ -1,8 +1,8 @@
 from .db import db
 
 
-class Default(db.Model):
-    __tablename__ = 'default'
+class HomeData(db.Model):
+    __tablename__ = 'homeData'
 
     id = db.Column(db.Integer, primary_key=True)
     itemURL = db.Column(db.String, nullable=False, unique=True)

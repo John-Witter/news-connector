@@ -4,8 +4,8 @@ import './gifs.css'
 import '../content.css'
 
 const Gif = ({ gif }) => {
-    gif['imageURL'] = gif.url
-    gif['itemURL'] = gif.images.original.url
+    gif['itemURL'] = gif.url
+    gif['imageURL'] = gif.images.original.url
 
     return (
         <div className='gif content-container'>

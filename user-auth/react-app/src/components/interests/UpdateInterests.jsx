@@ -23,6 +23,7 @@ const UpdateInterests = ({ userId, interest }) => {
         dispatch(editInterestTitle(userId, interest.id, selectedInterestTitle))
         interest.title = selectedInterestTitle
         editButtonText === 'Cancel' ? setEditButtonText('Edit') : setEditButtonText('Cancel')
+        window.location.reload()
     }
 
     if (!selectedInterestTitle) {

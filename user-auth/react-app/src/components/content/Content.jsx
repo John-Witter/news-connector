@@ -4,7 +4,6 @@ import { loadArticles } from "../../store/articles";
 import Article from '../articles/Article';
 import Gif from '../gifs/Gif';
 import Default from '../default/Default';
-// import Weather from '../weather/Weather';
 import '../content.css'
 
 const Content = () => {
@@ -30,7 +29,6 @@ const Content = () => {
 
     return (
         <div className='parent'>
-            {/* <Weather /> */}
             {user && articles && articles.map((article, idx) => {
                 return (
                     <div className='container' key={idx}>

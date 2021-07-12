@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+import Weather from './weather/Weather'
 import { login } from '../store/session';
 import './navbar.css'
 import './content.css'
@@ -20,6 +21,7 @@ const NavBar = () => {
 
   return (
     <nav className='navContainer'>
+      <Weather />
       <ul className='navbar'>
         {!user && <li>
           <NavLink to="/login" exact={true} activeClassName="active">
@@ -38,7 +40,6 @@ const NavBar = () => {
           Demo User
         </li>
         }
-
       </ul>
     </nav>
   );

@@ -11,3 +11,12 @@
     display: flex;
     flex-direction: row;
 }
+
+.viewInterests {
+    border-bottom: 1px solid #c3c1b4;
+    padding-bottom: .5rem;
+}
+
+.viewInterests:hover {
+    cursor: pointer;
+}

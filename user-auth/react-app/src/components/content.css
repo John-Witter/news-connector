@@ -50,6 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-left: 3px solid #c3c1b4;
 }
 
 .container {

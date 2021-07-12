@@ -38,6 +38,7 @@ const Interests = () => {
         <div className='interests'>
             <div>
                 <p
+                    className='viewInterests'
                     value={viewInterests}
                     onClick={() => viewInterests === 'View' ? setViewInterests('Hide') : setViewInterests('View')}
                 >

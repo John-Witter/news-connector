@@ -22,7 +22,7 @@ const SavedList = () => {
 
     return (
         <div className='saved'>
-            <p>Saved</p>
+            <p className='savedText'>Saved</p>
             {savedArticles && Object.values(savedArticles).map(item => {
                 return (
                     <div key={item.id} className='content-container'>

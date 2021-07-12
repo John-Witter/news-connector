@@ -14,3 +14,8 @@
     font-weight: bolder;
     color: #4b256b;
 }
+
+.savedText {
+    border-bottom: 1px solid #c3c1b4;
+    padding-bottom: .5rem
+}

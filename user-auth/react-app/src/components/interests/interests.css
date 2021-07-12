@@ -13,7 +13,8 @@
 }
 
 .viewInterests {
-    text-decoration: underline;
+    border-bottom: 1px solid #c3c1b4;
+    padding-bottom: .5rem;
 }
 
 .viewInterests:hover {

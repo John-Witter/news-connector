@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeFromSaved } from '../../store/saved'
+import '../content.css'
+import './saved.css'
 
 const RemoveFromSaved = ({ item }) => {
     const dispatch = useDispatch()
@@ -18,9 +20,9 @@ const RemoveFromSaved = ({ item }) => {
     }
 
     return (
-        <div>
+        <div className='addToSavedContainer'>
             <div
-                className='addToSavedContainer'
+                className='addToSavedText'
                 onClick={() => handleRemoveFromSaved()}
             >
                 {savedText}

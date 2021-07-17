@@ -18,7 +18,7 @@ const Interests = () => {
 
     useEffect(() => {
         if (!userId) return
-        dispatch(getAllInterests(user['id']))
+        dispatch(getAllInterests())
     }, [dispatch, user])
 
     // allInterests = useSelector(state => state.interest)

@@ -50,7 +50,7 @@ export const addInterest = (userId, title) => async (dispatch) => {
     }
 }
 
-export const getAllInterests = (userId) => async (dispatch) => {
+export const getAllInterests = () => async (dispatch) => {
     const res = await fetch('/api/interests/')
 
     if (res.ok) {

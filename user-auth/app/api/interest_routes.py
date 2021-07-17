@@ -1,4 +1,5 @@
 from flask import Blueprint, jsonify, request
+from flask_login import current_user
 from app.models import db, Interest
 from app.forms import InterestForm
 from app.forms.update_interest_form import UpdateInterestForm
@@ -10,7 +11,7 @@ interest_routes = Blueprint('interests', __name__)
 
 @interest_routes.route('/', methods=['GET'])
 def get_interests():
-    interests = Interest.query.all()
+    interests = Interest.query.filter_by(userId=current_user.id).all()
     return {"interests": [titles.to_dict() for titles in interests]}
 
 

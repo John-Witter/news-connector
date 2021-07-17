@@ -1,6 +1,7 @@
 import React, { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { loadSavedArticles } from '../../store/saved'
+import RemoveFromSaved from './RemoveFromSaved'
 import '../content.css'
 import '../articles/articles.css'
 
@@ -29,6 +30,7 @@ const SavedList = () => {
                             <img src={item.imageURL} alt={item.title} />
                         </a>
                         {item.description && (<div className='description'>{item.description}</div>)}
+                        <RemoveFromSaved item={item}/>
                     </div>
                 )
             })}

@@ -59,6 +59,7 @@ const Weather = () => {
 
         }
         
+        //if weather is loaded, set the state values
         if (Object.values(weather).length > 0 && !weather.error) {
             console.log('weather:', weather)
             setCity(weather.location.city)
@@ -75,30 +76,43 @@ const Weather = () => {
             setday1High(Math.floor(weather.weather.daily[1].temp.max))
             setday1Low(Math.floor(weather.weather.daily[1].temp.min))
             setday1Name(week[1])
+            const day1Icon = weather.weather.daily[1].weather[0].icon
+            setDay1TempIcon(`http://openweathermap.org/img/wn/${day1Icon}.png`)
 
             setday2High(Math.floor(weather.weather.daily[2].temp.max))
             setday2Low(Math.floor(weather.weather.daily[2].temp.min))
             setday2Name(week[2])
+            const day2Icon = weather.weather.daily[2].weather[0].icon
+            setDay2TempIcon(`http://openweathermap.org/img/wn/${day2Icon}.png`)
 
             setday3High(Math.floor(weather.weather.daily[3].temp.max))
             setday3Low(Math.floor(weather.weather.daily[3].temp.min))
             setday3Name(week[3])
+            const day3Icon = weather.weather.daily[3].weather[0].icon
+            setDay3TempIcon(`http://openweathermap.org/img/wn/${day3Icon}.png`)
             
             setday4High(Math.floor(weather.weather.daily[4].temp.max))
             setday4Low(Math.floor(weather.weather.daily[4].temp.min))
             setday4Name(week[4])
+            const day4Icon = weather.weather.daily[4].weather[0].icon
+            console.log('day4Icon:', day4Icon)
+            setDay4TempIcon(`http://openweathermap.org/img/wn/${day4Icon}.png`)
             
             setday5High(Math.floor(weather.weather.daily[5].temp.max))
             setday5Low(Math.floor(weather.weather.daily[5].temp.min))
             setday5Name(week[5])
+            const day5Icon = weather.weather.daily[5].weather[0].icon
+            setDay5TempIcon(`http://openweathermap.org/img/wn/${day5Icon}.png`)
             
             setday6High(Math.floor(weather.weather.daily[6].temp.max))
             setday6Low(Math.floor(weather.weather.daily[6].temp.min))
             setday6Name(week[6])
+            const day6Icon = weather.weather.daily[6].weather[0].icon
+            setDay6TempIcon(`http://openweathermap.org/img/wn/${day6Icon}.png`)
         }
         else dispatch(getWeather())
         
-    }, [dispatch])
+    }, [dispatch, weather])
     
     
     if (weather.error) {
@@ -111,10 +125,11 @@ const Weather = () => {
             <div>                
                 {weather.weather && (
                     <div>
-                        {console.log('currentTemp:', currentTemp)}
-                        {console.log('iconImage:', iconImage)}
-                        {currentTemp}
+                        {console.log('!!!!!!currentTemp:', currentTemp)}
+                        {console.log('!!!!!!iconImage:', iconImage)}
+                        <p>{todayDescription}</p>
                         <img src={iconImage} alt="f" />
+                        <p>{currentTemp}</p>
                     </div>
                 )}
                 

@@ -23,4 +23,4 @@ def get_weather():
 
     
     res = requests.get(url)
-    return res.json()
+    return {'weather': res.json(), 'location': response}

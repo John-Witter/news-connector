@@ -5,13 +5,15 @@ import InterestReducer from "./interests";
 import ArticleReducer from "./articles";
 import SavedReducer from "./saved";
 import DefaultReducer from "./default";
+import WeatherReducer from "./weather";
 
 const rootReducer = combineReducers({
     session,
     interest: InterestReducer,
     article: ArticleReducer,
     saved: SavedReducer,
-    default: DefaultReducer
+    default: DefaultReducer,
+    weather: WeatherReducer
 });
 
 

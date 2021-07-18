@@ -1,6 +1,6 @@
 body {
     /* http://www.colorhunter.com/tag/newspaper/1 */
-    background-color: #E0DFD3;
+    background-color: #e3e2d7   ;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -65,7 +65,8 @@ body {
     width: 75%;
     flex-direction: column;
     align-items: center;
-    background-color: #D9D7C9;
+    /* background-color: #D9D7C9; */
+    background-color: #ADACA0;
     /* border: 1px solid #C3C1B4; */
     border-radius: 1rem;
     margin: 1rem 0;

@@ -21,7 +21,7 @@ const Content = () => {
     useEffect(() => {
         if (!userId) return
         dispatch(loadArticles(userId))
-    }, [dispatch, userId])
+    }, [dispatch])
 
     if (!user) {
         return <Default />

@@ -10,20 +10,21 @@ def get_weather():
     api_key = os.environ.get('WEATHER_API')
 
     # https://ipapi.co/api/?python#location-of-clients-ip
-    response = requests.get('https://ipapi.co/json/').json()
-    print('!!!!!!response:', response)
-    if (response['error']):
+    try:
+        response = requests.get('https://ipapi.co/json/').json()
+
+        lat = response['latitude']
+        lon = response['longitude']
+        url = f'http://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}& appid={api_key}&units=imperial'
+
+        print('!!!!!!api_key:', api_key)
+        print('!!!!!!lat:', lat)
+        print('!!!!!!lon:', lon)
+        print('!!!!!!url:', url)
+
+        res = requests.get(url)
+        return {'weather': res.json(), 'location': response}
+
+    except:
+        print('!!!!!!not response:', response['error'])
         return {'error': response}
-        
-    lat = response['latitude']
-    lon = response['longitude']
-    url = f'http://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={api_key}&units=imperial'
-
-    print('!!!!!!api_key:', api_key)
-    print('!!!!!!lat:', lat)
-    print('!!!!!!lon:', lon)
-    print('!!!!!!url:', url)
-
-    
-    res = requests.get(url)
-    return {'weather': res.json(), 'location': response}

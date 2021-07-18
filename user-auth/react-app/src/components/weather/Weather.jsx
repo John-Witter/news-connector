@@ -8,22 +8,23 @@ const Weather = () => {
     console.log('weather:', weather)
     // const city = weather.location
 
+    
+    useEffect(() => {
+        if (weather.error) {
+            return
+        } else {
+            dispatch(getWeather())
+        }
+    },[dispatch])
+    
     if (weather.error) {
         console.log('weather:error:', weather.error['error'] == true)
+        return null
     }
-
-    useEffect(() => {
-       if (weather.error) {
-           return
-       } else {
-           dispatch(getWeather())
-       }
-    },[dispatch])
-
     
-    return (
+    else return (
         <div>
-
+            Weather!
         </div>
     )
 }

@@ -21,7 +21,7 @@ const NavBar = () => {
 
   return (
     <nav className='navContainer'>
-      {/* <Weather /> */}
+      <Weather />
       <ul className='navbar'>
         {!user && <li>
           <NavLink to="/login" exact={true} activeClassName="active">

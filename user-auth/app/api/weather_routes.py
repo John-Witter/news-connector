@@ -15,7 +15,7 @@ def get_weather():
 
         lat = response['latitude']
         lon = response['longitude']
-        url = f'http://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}& appid={api_key}&units=imperial'
+        url = f'http://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={api_key}&units=imperial'
 
         print('!!!!!!api_key:', api_key)
         print('!!!!!!lat:', lat)

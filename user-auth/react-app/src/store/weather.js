@@ -13,7 +13,6 @@ export const getWeather = () => async (dispatch) => {
 
     if (res.ok) {
         const data = await res.json()
-        console.log('getWeather data:', data)
         dispatch(loadWeather(data))
     }
 }

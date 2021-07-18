@@ -12,6 +12,9 @@ def get_weather():
     # https://ipapi.co/api/?python#location-of-clients-ip
     response = requests.get('https://ipapi.co/json/').json()
     print('!!!!!!response:', response)
+    if (response['error']):
+        return {'error': response}
+        
     lat = response['latitude']
     lon = response['longitude']
     url = f'http://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={api_key}&units=imperial'

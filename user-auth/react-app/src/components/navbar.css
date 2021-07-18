@@ -12,11 +12,16 @@
 
 .navbar li {
     list-style: none;
+    font-family: 'Times';
+}
+
+.navbar li a {
+    font-size: 1rem;
 }
 
 .demoBtn {
     color: #7E3EB3;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .navbar li:hover {

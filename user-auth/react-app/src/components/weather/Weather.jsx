@@ -140,44 +140,44 @@ const Weather = () => {
                             <p className='day'>Today</p>
                             <img className='weekImage' src={`http://openweathermap.org/img/wn/${currentTempIcon}.png`} alt="" />
                             {console.log('currentTempIcon', currentTempIcon)}
-                            <p className='dayHigh'>{todayHigh}</p>
-                            <p className='dayLow'>{todayLow}</p>
+                            <p className='dayHigh'>{todayHigh}{'\u00B0'}F</p>
+                            <p className='dayLow'>{todayLow}{'\u00B0'}F</p>
                         </div>
                         <div className='day1 weatherWeek'>
                             <p className='day'>{day1Name}</p>
                             <img className='weekImage' src={day1TempIcon} alt="" />
-                            <p className='dayHigh'>{day1High}</p>
-                            <p className='dayLow'>{day1Low}</p>
+                            <p className='dayHigh'>{day1High}{'\u00B0'}F</p>
+                            <p className='dayLow'>{day1Low}{'\u00B0'}F</p>
                         </div>
                         <div className='day2 weatherWeek'>
                             <p className='day'>{day2Name}</p>
                             <img className='weekImage' src={day2TempIcon} alt="" />
-                            <p className='dayHigh'>{day2High}</p>
-                            <p className='dayLow'>{day2Low}</p>
+                            <p className='dayHigh'>{day2High}{'\u00B0'}F</p>
+                            <p className='dayLow'>{day2Low}{'\u00B0'}F</p>
                         </div>
                         <div className='day3 weatherWeek'>
                             <p className='day'>{day3Name}</p>
                             <img className='weekImage' src={day3TempIcon} alt="" />
-                            <p className='dayHigh'>{day3High}</p>
-                            <p className='dayLow'>{day3Low}</p>
+                            <p className='dayHigh'>{day3High}{'\u00B0'}F</p>
+                            <p className='dayLow'>{day3Low}{'\u00B0'}F</p>
                         </div>
                         <div className='day4 weatherWeek'>
                             <p className='day'>{day4Name}</p>
                             <img className='weekImage' src={day4TempIcon} alt="" />
-                            <p className='dayHigh'>{day4High}</p>
-                            <p className='dayLow'>{day4Low}</p>
+                            <p className='dayHigh'>{day4High}{'\u00B0'}F</p>
+                            <p className='dayLow'>{day4Low}{'\u00B0'}F</p>
                         </div>
                         <div className='day5 weatherWeek'>
                             <p className='day'>{day5Name}</p>
                             <img className='weekImage' src={day5TempIcon} alt="" />
-                            <p className='dayHigh'>{day5High}</p>
-                            <p className='dayLow'>{day5Low}</p>
+                            <p className='dayHigh'>{day5High}{'\u00B0'}F</p>
+                            <p className='dayLow'>{day5Low}{'\u00B0'}F</p>
                         </div>
                         <div className='day6 weatherWeek'>
                             <p className='day'>{day6Name}</p>
                             <img className='weekImage' src={day6TempIcon} alt="" />
-                            <p className='dayHigh'>{day6High}</p>
-                            <p className='dayLow'>{day6Low}</p>
+                            <p className='dayHigh'>{day6High}{'\u00B0'}F</p>
+                            <p className='dayLow'>{day6Low}{'\u00B0'}F</p>
                         </div>
                     </div>
                 )}

@@ -70,7 +70,7 @@
 
 .day {
     color: white;
-    font-weight: lighter;
+    font-weight: 700;
     letter-spacing: 2px;
     font-size: smaller;
 }
@@ -78,9 +78,11 @@
 .dayHigh {
     color: black;
     letter-spacing: 2px;
+    font-weight: bolder;
 }
 
 .dayLow {
     color: white;
     letter-spacing: 2px;
+    font-weight: bolder;
 }

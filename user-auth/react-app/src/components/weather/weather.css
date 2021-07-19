@@ -1,0 +1,18 @@
+.weatherContainer {
+    border: 1px solid black !important;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    /* grid-template-areas: 
+    "today . . . today"
+    "week week week week week"; */
+}
+
+.weatherToday {
+    /* grid-area: today; */
+    border: 1px dotted black;
+}
+
+.weatherWeek {
+    /* grid-area: week; */
+    border: 1px dashed black;
+}

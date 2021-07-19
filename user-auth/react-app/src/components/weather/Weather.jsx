@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getWeather } from '../../store/weather'
 import getDays from './getDays'
+import './weather.css'
 
 const Weather = () => {
     const dispatch = useDispatch()
@@ -122,14 +123,59 @@ const Weather = () => {
 
 
         return (
-            <div>                
+            <div className='weatherParent'>                
                 {weather.weather && (
-                    <div>
-                        {console.log('!!!!!!currentTemp:', currentTemp)}
-                        {console.log('!!!!!!iconImage:', iconImage)}
-                        <p>{todayDescription}</p>
-                        <img src={iconImage} alt="f" />
-                        <p>{currentTemp}</p>
+                    <div className='weatherContainer'>
+                        <div className='weatherToday'>
+                            {console.log('!!!!!!currentTemp:', currentTemp)}
+                            {console.log('!!!!!!iconImage:', iconImage)}
+                            <p>{todayDescription}</p>
+                            <img src={iconImage} alt="f" />
+                            <p>{currentTemp}</p>
+                        </div>
+                        <div className='weatherWeek'>
+                            <p>Today</p>
+                            <img src={`http://openweathermap.org/img/wn/${currentTempIcon}.png`} alt="" />
+                            {console.log('currentTempIcon', currentTempIcon)}
+                            <p>{todayHigh}</p>
+                            <p>{todayLow}</p>
+                        </div>
+                        <div className='weatherWeek'>
+                            <p>{day1Name}</p>
+                            <img src={day1TempIcon} alt="" />
+                            <p>{day1High}</p>
+                            <p>{day1Low}</p>
+                        </div>
+                        <div className='weatherWeek'>
+                            <p>{day2Name}</p>
+                            <img src={day2TempIcon} alt="" />
+                            <p>{day2High}</p>
+                            <p>{day2Low}</p>
+                        </div>
+                        <div className='weatherWeek'>
+                            <p>{day3Name}</p>
+                            <img src={day3TempIcon} alt="" />
+                            <p>{day3High}</p>
+                            <p>{day3Low}</p>
+                        </div>
+                        <div className='weatherWeek'>
+                            <p>{day4Name}</p>
+                            <img src={day4TempIcon} alt="" />
+                            <p>{day4High}</p>
+                            <p>{day4Low}</p>
+                        </div>
+                        <div className='weatherWeek'>
+                            <p>{day5Name}</p>
+                            <img src={day5TempIcon} alt="" />
+                            <p>{day5High}</p>
+                            <p>{day5Low}</p>
+                        </div>
+                        <div className='weatherWeek'>
+                            <p>{day6Name}</p>
+                            <img src={day6TempIcon} alt="" />
+                            <p>{day6High}</p>
+                            <p>{day6Low}</p>
+                        </div>
                     </div>
                 )}
                 

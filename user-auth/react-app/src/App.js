@@ -9,6 +9,7 @@ import Content from "./components/content/Content";
 import Interests from "./components/interests/Interests";
 import Title from "./components/title/Title";
 import SavedList from "./components/saved/SavedList";
+import Weather from "./components/weather/Weather";
 import { authenticate } from "./store/session";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Title />
           <SavedList />
           <Content />
+          
           <Interests />
         </Route>
       </Switch>

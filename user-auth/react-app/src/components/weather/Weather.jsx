@@ -113,7 +113,7 @@ const Weather = () => {
         }
         else dispatch(getWeather())
         
-    }, [dispatch, weather])
+    }, [dispatch])
     
     
     if (weather.error) {
@@ -123,58 +123,61 @@ const Weather = () => {
 
 
         return (
-            <div className='weatherParent'>                
+            <div className='weatherParent'>                  
                 {weather.weather && (
                     <div className='weatherContainer'>
                         <div className='weatherToday'>
+                            <div className='city'>
+                                <p>{`Weather in ${city}`}</p>
+                            </div>              
                             {console.log('!!!!!!currentTemp:', currentTemp)}
                             {console.log('!!!!!!iconImage:', iconImage)}
                             <p>{todayDescription}</p>
                             <img src={iconImage} alt="f" />
                             <p>{currentTemp}</p>
                         </div>
-                        <div className='weatherWeek'>
-                            <p>Today</p>
-                            <img src={`http://openweathermap.org/img/wn/${currentTempIcon}.png`} alt="" />
+                        <div className='day0 weatherWeek'>
+                            <p className='day'>Today</p>
+                            <img className='weekImage' src={`http://openweathermap.org/img/wn/${currentTempIcon}.png`} alt="" />
                             {console.log('currentTempIcon', currentTempIcon)}
-                            <p>{todayHigh}</p>
-                            <p>{todayLow}</p>
+                            <p className='dayHigh'>{todayHigh}</p>
+                            <p className='dayLow'>{todayLow}</p>
                         </div>
-                        <div className='weatherWeek'>
-                            <p>{day1Name}</p>
-                            <img src={day1TempIcon} alt="" />
-                            <p>{day1High}</p>
-                            <p>{day1Low}</p>
+                        <div className='day1 weatherWeek'>
+                            <p className='day'>{day1Name}</p>
+                            <img className='weekImage' src={day1TempIcon} alt="" />
+                            <p className='dayHigh'>{day1High}</p>
+                            <p className='dayLow'>{day1Low}</p>
                         </div>
-                        <div className='weatherWeek'>
-                            <p>{day2Name}</p>
-                            <img src={day2TempIcon} alt="" />
-                            <p>{day2High}</p>
-                            <p>{day2Low}</p>
+                        <div className='day2 weatherWeek'>
+                            <p className='day'>{day2Name}</p>
+                            <img className='weekImage' src={day2TempIcon} alt="" />
+                            <p className='dayHigh'>{day2High}</p>
+                            <p className='dayLow'>{day2Low}</p>
                         </div>
-                        <div className='weatherWeek'>
-                            <p>{day3Name}</p>
-                            <img src={day3TempIcon} alt="" />
-                            <p>{day3High}</p>
-                            <p>{day3Low}</p>
+                        <div className='day3 weatherWeek'>
+                            <p className='day'>{day3Name}</p>
+                            <img className='weekImage' src={day3TempIcon} alt="" />
+                            <p className='dayHigh'>{day3High}</p>
+                            <p className='dayLow'>{day3Low}</p>
                         </div>
-                        <div className='weatherWeek'>
-                            <p>{day4Name}</p>
-                            <img src={day4TempIcon} alt="" />
-                            <p>{day4High}</p>
-                            <p>{day4Low}</p>
+                        <div className='day4 weatherWeek'>
+                            <p className='day'>{day4Name}</p>
+                            <img className='weekImage' src={day4TempIcon} alt="" />
+                            <p className='dayHigh'>{day4High}</p>
+                            <p className='dayLow'>{day4Low}</p>
                         </div>
-                        <div className='weatherWeek'>
-                            <p>{day5Name}</p>
-                            <img src={day5TempIcon} alt="" />
-                            <p>{day5High}</p>
-                            <p>{day5Low}</p>
+                        <div className='day5 weatherWeek'>
+                            <p className='day'>{day5Name}</p>
+                            <img className='weekImage' src={day5TempIcon} alt="" />
+                            <p className='dayHigh'>{day5High}</p>
+                            <p className='dayLow'>{day5Low}</p>
                         </div>
-                        <div className='weatherWeek'>
-                            <p>{day6Name}</p>
-                            <img src={day6TempIcon} alt="" />
-                            <p>{day6High}</p>
-                            <p>{day6Low}</p>
+                        <div className='day6 weatherWeek'>
+                            <p className='day'>{day6Name}</p>
+                            <img className='weekImage' src={day6TempIcon} alt="" />
+                            <p className='dayHigh'>{day6High}</p>
+                            <p className='dayLow'>{day6Low}</p>
                         </div>
                     </div>
                 )}

@@ -1,18 +1,54 @@
 .weatherContainer {
     border: 1px solid black !important;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
-    /* grid-template-areas: 
-    "today . . . today"
-    "week week week week week"; */
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+    "today today today today today today"
+    "weekDay weekDay weekDay weekDay weekDay weekDay"
+    "weekDay weekDay weekDay weekDay weekDay weekDay"
+    "weekDay weekDay weekDay weekDay weekDay weekDay";
 }
 
 .weatherToday {
-    /* grid-area: today; */
+    grid-area: today;
     border: 1px dotted black;
+    display: flex;
+    max-width: 50%;
+}
+
+.city {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
 }
 
 .weatherWeek {
-    /* grid-area: week; */
+    grid-area: weekDay;
     border: 1px dashed black;
+    display: flex;
+    justify-content: space-around;
+    max-width: 50%;
+    
+}
+
+.weatherParent {
+    max-width: 50%;
+}
+
+.weekImage {
+    color: white;
+}
+
+.day {
+    color: white;
+}
+
+.dayHigh {
+    color: white;
+}
+
+.dayLow {
+    color: white;
 }

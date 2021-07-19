@@ -1,8 +1,10 @@
 .weatherParent {
     max-width: 30%;
+    height: 500px;
 }
 
 .weatherContainer {
+    max-height: 100%;
     border-radius: 1rem;
     display: grid;
     background-color: #888781;
@@ -50,6 +52,7 @@
 
 .todayDescription {
     align-self: center;
+    letter-spacing: 1px;
 }
 
 .weatherWeek {
@@ -66,6 +69,7 @@
 
 .weekImage {
     color: white;
+    margin-bottom: -1rem;
 }
 
 .day {
@@ -79,6 +83,7 @@
     color: black;
     letter-spacing: 2px;
     font-weight: bolder;
+    margin-bottom: -1rem;
 }
 
 .dayLow {

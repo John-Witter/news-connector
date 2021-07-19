@@ -113,7 +113,7 @@ const Weather = () => {
         }
         else dispatch(getWeather())
         
-    }, [dispatch])
+    }, [dispatch, weather])
     
     
     if (weather.error) {

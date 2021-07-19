@@ -13,7 +13,7 @@ body {
         "navContainer navContainer navContainer"
         "titleContainer titleContainer titleContainer"
         "interests parent saved"
-        "interests parent saved";
+        "weather parent saved";
         grid-template-columns: 1fr 2fr 1fr;
         width: 100%;
 }
@@ -43,6 +43,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.weatherParent {
+    grid-area: weather;
 }
 
 .saved {
@@ -65,9 +71,7 @@ body {
     width: 75%;
     flex-direction: column;
     align-items: center;
-    /* background-color: #D9D7C9; */
     background-color: #ADACA0;
-    /* border: 1px solid #C3C1B4; */
     border-radius: 1rem;
     margin: 1rem 0;
     padding: 1rem 1rem;

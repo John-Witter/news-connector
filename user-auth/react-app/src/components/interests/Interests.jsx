@@ -4,6 +4,7 @@ import { addInterest, getAllInterests } from "../../store/interests";
 import UpdateInterests from "./UpdateInterests";
 import '../content.css'
 import './interests.css'
+import Weather from "../weather/Weather";
 
 const Interests = () => {
     const dispatch = useDispatch()
@@ -68,6 +69,7 @@ const Interests = () => {
                     </div>
                 )}
             </div>
+            <Weather />
         </div>
     )
 }

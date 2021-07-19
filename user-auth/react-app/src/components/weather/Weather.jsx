@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getWeather } from '../../store/weather'
 import getDays from './getDays'
 import './weather.css'
+import '../content.css'
 
 const Weather = () => {
     const dispatch = useDispatch()

@@ -128,13 +128,13 @@ const Weather = () => {
                     <div className='weatherContainer'>
                         <div className='weatherToday'>
                             <div className='city'>
-                                <p>{`Weather in ${city}`}</p>
+                                <p className='cityName'>{`Weather in ${city}`}</p>
                             </div>              
                             {console.log('!!!!!!currentTemp:', currentTemp)}
                             {console.log('!!!!!!iconImage:', iconImage)}
-                            <p>{todayDescription}</p>
-                            <img src={iconImage} alt="f" />
-                            <p>{currentTemp}</p>
+                            <p className='todayDescription'>{todayDescription}</p>
+                            <img className='todayImage' src={iconImage} alt="f" />
+                            <p className='currentTemp'>{currentTemp}</p>
                         </div>
                         <div className='day0 weatherWeek'>
                             <p className='day'>Today</p>

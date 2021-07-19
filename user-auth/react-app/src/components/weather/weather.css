@@ -1,18 +1,26 @@
+.weatherParent {
+    max-width: 30%;
+}
+
 .weatherContainer {
-    border: 1px solid black !important;
+    border-radius: 1rem;
     display: grid;
+    background-color: #888781;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
     "today today today today today today today"
+    /* "today today today today today today today" */
     "weekDay weekDay weekDay weekDay weekDay weekDay weekDay";
 }
 
 .weatherToday {
-    grid-area: today;
-    border: 1px dotted black;
+    grid-area: today;    
     display: flex;
-    max-width: 50%;
+    flex-direction: column;
+    max-width: 100%;
+    justify-self: center;
+    padding-top: 2rem;
 }
 
 .city {
@@ -22,20 +30,38 @@
     margin-bottom: 2rem;
 }
 
+.cityName {
+    color: #2D2D2B;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    font-size: larger;
+    
+}
+
+.currentTemp {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.todayImage {
+    margin: 0 auto;
+    max-width: 33%;
+}
+
+.todayDescription {
+    align-self: center;
+}
+
 .weatherWeek {
-    /* grid-area: weekDay; */
-    border: 1px solid black;
+    /* grid-area: weekDay; */    
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     /* align-content: flex-end; */
     max-width: 100%;
+    padding-bottom: 2rem;
     
-}
-
-.weatherParent {
-    max-width: 50%;
 }
 
 .weekImage {
@@ -44,12 +70,17 @@
 
 .day {
     color: white;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-size: smaller;
 }
 
 .dayHigh {
-    color: white;
+    color: black;
+    letter-spacing: 2px;
 }
 
 .dayLow {
     color: white;
+    letter-spacing: 2px;
 }

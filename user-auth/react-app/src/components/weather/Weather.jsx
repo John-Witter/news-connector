@@ -7,6 +7,7 @@ import '../content.css'
 
 const Weather = () => {
     const dispatch = useDispatch()
+    const user = useSelector((state) => state.session.user);
     const weather = useSelector(state => state.weather)
     const [week, setWeek] = useState(getDays())
 
@@ -120,6 +121,8 @@ const Weather = () => {
     if (weather.error) {
         console.log('weather:error:', weather.error['error'] == true)
         return null
+    } else if (!user) {
+        return null
     } else {
 
 
@@ -135,7 +138,7 @@ const Weather = () => {
                             {console.log('!!!!!!iconImage:', iconImage)}
                             <p className='todayDescription'>{todayDescription}</p>
                             <img className='todayImage' src={iconImage} alt="f" />
-                            <p className='currentTemp'>{currentTemp}</p>
+                            <p className='currentTemp'>{currentTemp}{'\u00B0'}F</p>
                         </div>
                         <div className='day0 weatherWeek'>
                             <p className='day'>Today</p>

@@ -13,7 +13,7 @@ body {
         "navContainer navContainer navContainer"
         "titleContainer titleContainer titleContainer"
         "interests parent saved"
-        "weather parent saved";
+        "interests parent saved";
         grid-template-columns: 1fr 2fr 1fr;
         width: 100%;
 }
@@ -45,6 +45,7 @@ body {
     align-items: center;
     width: 100%;
     margin-top: 1rem;
+    margin-left: 2.5rem;
 }
 
 .weatherParent {

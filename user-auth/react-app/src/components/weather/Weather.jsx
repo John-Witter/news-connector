@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getWeather } from '../../store/weather'
-import getDays from './getDays'
+import { getDays, getAbbrDays } from './getDays'
 import './weather.css'
 import '../content.css'
 
@@ -10,6 +10,7 @@ const Weather = () => {
     const user = useSelector((state) => state.session.user);
     const weather = useSelector(state => state.weather)
     const [week, setWeek] = useState(getDays())
+    const [abbrWeek, setAbbrWeek] = useState(getAbbrDays(week))
 
     //set these vars if weather successfully fetched
     const [city, setCity] = useState(weather)
@@ -78,38 +79,38 @@ const Weather = () => {
 
             setday1High(Math.floor(weather.weather.daily[1].temp.max))
             setday1Low(Math.floor(weather.weather.daily[1].temp.min))
-            setday1Name(week[1])
+            setday1Name(abbrWeek[1])
             const day1Icon = weather.weather.daily[1].weather[0].icon
             setDay1TempIcon(`http://openweathermap.org/img/wn/${day1Icon}.png`)
 
             setday2High(Math.floor(weather.weather.daily[2].temp.max))
             setday2Low(Math.floor(weather.weather.daily[2].temp.min))
-            setday2Name(week[2])
+            setday2Name(abbrWeek[2])
             const day2Icon = weather.weather.daily[2].weather[0].icon
             setDay2TempIcon(`http://openweathermap.org/img/wn/${day2Icon}.png`)
 
             setday3High(Math.floor(weather.weather.daily[3].temp.max))
             setday3Low(Math.floor(weather.weather.daily[3].temp.min))
-            setday3Name(week[3])
+            setday3Name(abbrWeek[3])
             const day3Icon = weather.weather.daily[3].weather[0].icon
             setDay3TempIcon(`http://openweathermap.org/img/wn/${day3Icon}.png`)
             
             setday4High(Math.floor(weather.weather.daily[4].temp.max))
             setday4Low(Math.floor(weather.weather.daily[4].temp.min))
-            setday4Name(week[4])
+            setday4Name(abbrWeek[4])
             const day4Icon = weather.weather.daily[4].weather[0].icon
             console.log('day4Icon:', day4Icon)
             setDay4TempIcon(`http://openweathermap.org/img/wn/${day4Icon}.png`)
             
             setday5High(Math.floor(weather.weather.daily[5].temp.max))
             setday5Low(Math.floor(weather.weather.daily[5].temp.min))
-            setday5Name(week[5])
+            setday5Name(abbrWeek[5])
             const day5Icon = weather.weather.daily[5].weather[0].icon
             setDay5TempIcon(`http://openweathermap.org/img/wn/${day5Icon}.png`)
             
             setday6High(Math.floor(weather.weather.daily[6].temp.max))
             setday6Low(Math.floor(weather.weather.daily[6].temp.min))
-            setday6Name(week[6])
+            setday6Name(abbrWeek[6])
             const day6Icon = weather.weather.daily[6].weather[0].icon
             setDay6TempIcon(`http://openweathermap.org/img/wn/${day6Icon}.png`)
         }

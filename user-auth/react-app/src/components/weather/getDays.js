@@ -1,4 +1,4 @@
-export default function getDays () {
+export const getDays = () => {
     const options = { weekday: 'long' }
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     const day = new Date().getDay()
@@ -77,5 +77,17 @@ export default function getDays () {
             break;
     }
 
+
     return week
+}
+
+export const getAbbrDays = (week) => {
+    let abbrWeek = {}
+
+    Object.values(week).forEach((day, i) => {
+        let abbrDay = day.slice(0, 3)
+        abbrWeek[i] = abbrDay
+    })
+
+    return abbrWeek
 }

@@ -4,7 +4,7 @@
 }
 
 .weatherContainer {
-    max-height: 100%;
+    max-height: 90%;
     border-radius: 1rem;
     display: grid;
     background-color: #ADACA0;
@@ -84,10 +84,13 @@
     letter-spacing: 2px;
     font-weight: bolder;
     margin-bottom: -1rem;
+    font-size: .8rem;
+    padding-bottom: .25rem;
 }
 
 .dayLow {
     color: white;
     letter-spacing: 2px;
     font-weight: bolder;
+    font-size: .8rem;
 }

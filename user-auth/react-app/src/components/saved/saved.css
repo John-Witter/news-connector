@@ -13,7 +13,7 @@
 
 .addToSavedText:hover {
     cursor: pointer;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #4b256b;
 }
 

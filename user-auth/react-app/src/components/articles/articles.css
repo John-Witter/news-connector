@@ -31,7 +31,7 @@ p {
 }
 
 a:hover {
-    font-weight: bolder;
+    /* font-weight: bolder; */
     color: #4b256b;
 }
 

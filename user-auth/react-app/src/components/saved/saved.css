@@ -3,15 +3,17 @@
 }
 
 .addToSavedText {
-    border: .33rem solid #C3C1B4;
+    border: .33rem solid #e1e0d9;
     color: #7e3eb3;
     padding: .5rem;
     margin-top: 1rem;
+    background-color: #C5C4BC;
+    border-radius: .5rem;
 }
 
 .addToSavedText:hover {
     cursor: pointer;
-    font-weight: bolder;
+    font-weight: bold;
     color: #4b256b;
 }
 

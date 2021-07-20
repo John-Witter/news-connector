@@ -15,6 +15,12 @@
 .viewInterests {
     border-bottom: 1px solid #c3c1b4;
     padding-bottom: .5rem;
+    color: #7E3EB3;
+}
+
+.viewInterests:hover {
+    font-weight: bolder;
+    color: #4b256b;
 }
 
 .viewInterests:hover {

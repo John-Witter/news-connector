@@ -26,8 +26,7 @@ export default function ArticleReducer (state={}, action) {
     let newState = {...state}
 
     switch (action.type) {
-        case READ_ARTICLES:
-            // console.log('READ_ARTICLE action:', action)
+        case READ_ARTICLES:            
             // news api articles
             let articles = action.articles.articles.articles
             let gifs = action.articles.gifs

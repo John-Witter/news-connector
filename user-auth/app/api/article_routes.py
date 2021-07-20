@@ -31,8 +31,7 @@ def get_articles():
     news_url = ('https://newsapi.org/v2/everything?q=' + ' OR '.join(titles)
            ) + '&language=en' + '&apiKey=' + news_api_key + '&pageSize=100'
 
-    news_res = requests.get(news_url)
-    print('!!!!!!news_res:', news_res)
+    news_res = requests.get(news_url)    
     articles = news_res.json()['articles']
     random.shuffle(articles)
     

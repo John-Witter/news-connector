@@ -59,13 +59,13 @@ const Weather = () => {
             const iconURL = `http://openweathermap.org/img/wn/${currentTempIcon}@2x.png`
             
             setIconImage(iconURL)
-            console.log('iconImage', iconImage)
+            
 
         }
         
         //if weather is loaded, set the state values
         if (Object.values(weather).length > 0 && !weather.error) {
-            console.log('weather:', weather)
+            
             setCity(weather.location.city)
 
             setCurrentTemp(Math.floor(weather.weather.current.temp))
@@ -99,7 +99,7 @@ const Weather = () => {
             setday4Low(Math.floor(weather.weather.daily[4].temp.min))
             setday4Name(abbrWeek[4])
             const day4Icon = weather.weather.daily[4].weather[0].icon
-            console.log('day4Icon:', day4Icon)
+            
             setDay4TempIcon(`http://openweathermap.org/img/wn/${day4Icon}.png`)
             
             setday5High(Math.floor(weather.weather.daily[5].temp.max))
@@ -120,7 +120,7 @@ const Weather = () => {
     
     
     if (weather.error) {
-        console.log('weather:error:', weather.error['error'] == true)
+        
         return null
     } else if (!user) {
         return null
@@ -135,8 +135,8 @@ const Weather = () => {
                             <div className='city'>
                                 <p className='cityName'>{`Weather in ${city}`}</p>
                             </div>              
-                            {console.log('!!!!!!currentTemp:', currentTemp)}
-                            {console.log('!!!!!!iconImage:', iconImage)}
+                            
+                            
                             <p className='todayDescription'>{todayDescription}</p>
                             <img className='todayImage' src={iconImage} alt="f" />
                             <p className='currentTemp'>{currentTemp}{'\u00B0'}F</p>
@@ -144,7 +144,7 @@ const Weather = () => {
                         <div className='day0 weatherWeek'>
                             <p className='day'>Today</p>
                             <img className='weekImage' src={`http://openweathermap.org/img/wn/${currentTempIcon}.png`} alt="" />
-                            {console.log('currentTempIcon', currentTempIcon)}
+                            
                             <p className='dayHigh'>{todayHigh}{'\u00B0'}F</p>
                             <p className='dayLow'>{todayLow}{'\u00B0'}F</p>
                         </div>

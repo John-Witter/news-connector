@@ -22,8 +22,7 @@ export default function DefaultReducer (state={}, action) {
     let newState = {...state}
 
     switch (action.type) {
-        case READ_DEFAULT:
-            console.log('READ_DEFAULT action:', action)
+        case READ_DEFAULT:            
             action.articles.defaults.forEach(article => {
                 newState[article.id] = article
             })

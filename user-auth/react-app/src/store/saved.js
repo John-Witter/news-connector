@@ -22,7 +22,6 @@ const deleteSavedArticle = (article) => ({
 
 // thunks 
 export const addToSaved = (userId, itemURL, imageURL, title, description) => async (dispatch) => {
-    // console.log('inside addToSaved')
     const res = await fetch('/api/saved/', {
         method: "POST",
         headers: {
@@ -54,7 +53,6 @@ export const loadSavedArticles = () => async (dispatch) => {
 }
 
 export const removeFromSaved = (userId, itemURL, imageURL, title, description) => async (dispatch) => {
-    // console.log('insede removeFromSaved')
     const res = await fetch('/api/saved/', {
         method: "DELETE",
         headers: {
@@ -81,19 +79,15 @@ export default function SavedReducer (state={}, action) {
 
     switch (action.type) {
         case READ_SAVED_ARTICLES:
-            // console.log('READ_SAVED_ARTICLES action:', action)     
             const articles = action.articles.saved
-            // console.log('READ_SAVED_ARTICLES articles:', articles)
             articles.forEach(article => {
                 newState[article.id] = article
             })
             return newState
         case POST_SAVED_ARTICLE:
-            // console.log("POST_SAVED_ARTICLE action:", action)
             newState[action.article.id] = action.article
             return newState
         case DELETE_SAVED_ARTICLE:
-            // console.log("DELETE_SAVED_ARTICLE action:", action)
             delete newState[action.article.id]
             return newState
         default:

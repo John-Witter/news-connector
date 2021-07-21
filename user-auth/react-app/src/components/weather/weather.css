@@ -50,7 +50,7 @@
 
 .todayImage {
     grid-area: todayImg;
-    margin-top: -2rem;
+    margin-top: -3rem;
     margin-left: 3rem;
 }
 
@@ -76,7 +76,7 @@
     /* align-content: flex-end; */
     max-width: 100%;
     padding-bottom: .5rem;
-    
+    margin-top: -1rem;
 }
 
 .day {
@@ -111,4 +111,5 @@
 .todayDivInner {
     grid-area: todayInner;
     padding-left: 1rem;
+    margin-top: -1rem;
 }

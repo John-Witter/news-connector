@@ -66,7 +66,7 @@ const Weather = () => {
         //if weather is loaded, set the state values
         if (Object.values(weather).length > 0 && !weather.error) {
 
-            setCity(weather.location.city)
+            setCity(weather.location[0])
 
             setCurrentTemp(Math.floor(weather.weather.current.temp))
             setCurrentTempIcon(weather.weather.current.weather[0].icon)

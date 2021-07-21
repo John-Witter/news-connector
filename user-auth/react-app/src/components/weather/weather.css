@@ -9,10 +9,10 @@
     display: grid;
     background-color: #ADACA0;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: .5fr .5fr 1fr;
     grid-template-areas: 
     "today today today today today today today"
-    /* "today today today today today today today" */
+    "todayInner todayInner todayInner todayInner todayImg todayImg todayImg"
     "weekDay weekDay weekDay weekDay weekDay weekDay weekDay";
 }
 
@@ -22,7 +22,7 @@
     flex-direction: column;
     max-width: 100%;
     justify-self: center;
-    padding-top: 2rem;
+    padding-top: .5rem;
 }
 
 .city {
@@ -49,8 +49,9 @@
 }
 
 .todayImage {
-    margin: 0 auto;
-    max-width: 40%;
+    grid-area: todayImg;
+    margin-top: -2rem;
+    margin-left: 3rem;
 }
 
 .weekImage {
@@ -74,7 +75,7 @@
     flex-direction: column;
     /* align-content: flex-end; */
     max-width: 100%;
-    padding-bottom: 2rem;
+    padding-bottom: .5rem;
     
 }
 
@@ -100,4 +101,14 @@
     letter-spacing: 2px;
     font-weight: bolder;
     font-size: .8rem;
+}
+
+.todayDivOuter {
+    display: flex;
+    flex-direction: row;
+}
+
+.todayDivInner {
+    grid-area: todayInner;
+    padding-left: 1rem;
 }

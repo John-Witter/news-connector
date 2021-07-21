@@ -14,14 +14,14 @@ const Weather = () => {
 
     //set these vars if weather successfully fetched
     const [city, setCity] = useState(weather)
-    
+
     const [currentTemp, setCurrentTemp] = useState(0)
     const [currentTempIcon, setCurrentTempIcon] = useState('')
     const [iconImage, setIconImage] = useState('')
     const [todayHigh, setTodayHigh] = useState(0)
     const [todayLow, setTodayLow] = useState(0)
     const [todayDescription, setTodayDescription] = useState('')
-    
+
     const [day1High, setday1High] = useState(0)
     const [day1Low, setday1Low] = useState(0)
     const [day1Name, setday1Name] = useState('')
@@ -31,17 +31,17 @@ const Weather = () => {
     const [day2Low, setday2Low] = useState(0)
     const [day2Name, setday2Name] = useState('')
     const [day2TempIcon, setDay2TempIcon] = useState('')
-    
+
     const [day3High, setday3High] = useState(0)
     const [day3Low, setday3Low] = useState(0)
     const [day3Name, setday3Name] = useState('')
     const [day3TempIcon, setDay3TempIcon] = useState('')
-    
+
     const [day4High, setday4High] = useState(0)
     const [day4Low, setday4Low] = useState(0)
     const [day4Name, setday4Name] = useState('')
     const [day4TempIcon, setDay4TempIcon] = useState('')
-    
+
     const [day5High, setday5High] = useState(0)
     const [day5Low, setday5Low] = useState(0)
     const [day5Name, setday5Name] = useState('')
@@ -50,29 +50,29 @@ const Weather = () => {
     const [day6High, setday6High] = useState(0)
     const [day6Low, setday6Low] = useState(0)
     const [day6Name, setday6Name] = useState('')
-    const [day6TempIcon, setDay6TempIcon] = useState('')    
-    
+    const [day6TempIcon, setDay6TempIcon] = useState('')
+
 
     useEffect(() => {
-    
+
         const getIconImage = (currentTempIcon) => {
             const iconURL = `http://openweathermap.org/img/wn/${currentTempIcon}@2x.png`
-            
+
             setIconImage(iconURL)
-            
+
 
         }
-        
+
         //if weather is loaded, set the state values
         if (Object.values(weather).length > 0 && !weather.error) {
-            
+
             setCity(weather.location.city)
 
             setCurrentTemp(Math.floor(weather.weather.current.temp))
             setCurrentTempIcon(weather.weather.current.weather[0].icon)
 
             getIconImage(weather.weather.current.weather[0].icon)
-            
+
             setTodayHigh(Math.floor(weather.weather.daily[0].temp.max))
             setTodayLow(Math.floor(weather.weather.daily[0].temp.min))
             setTodayDescription(weather.weather.current.weather[0].description)
@@ -94,20 +94,20 @@ const Weather = () => {
             setday3Name(abbrWeek[3])
             const day3Icon = weather.weather.daily[3].weather[0].icon
             setDay3TempIcon(`http://openweathermap.org/img/wn/${day3Icon}.png`)
-            
+
             setday4High(Math.floor(weather.weather.daily[4].temp.max))
             setday4Low(Math.floor(weather.weather.daily[4].temp.min))
             setday4Name(abbrWeek[4])
             const day4Icon = weather.weather.daily[4].weather[0].icon
-            
+
             setDay4TempIcon(`http://openweathermap.org/img/wn/${day4Icon}.png`)
-            
+
             setday5High(Math.floor(weather.weather.daily[5].temp.max))
             setday5Low(Math.floor(weather.weather.daily[5].temp.min))
             setday5Name(abbrWeek[5])
             const day5Icon = weather.weather.daily[5].weather[0].icon
             setDay5TempIcon(`http://openweathermap.org/img/wn/${day5Icon}.png`)
-            
+
             setday6High(Math.floor(weather.weather.daily[6].temp.max))
             setday6Low(Math.floor(weather.weather.daily[6].temp.min))
             setday6Name(abbrWeek[6])
@@ -115,12 +115,12 @@ const Weather = () => {
             setDay6TempIcon(`http://openweathermap.org/img/wn/${day6Icon}.png`)
         }
         else dispatch(getWeather())
-        
+
     }, [dispatch, weather])
-    
-    
+
+
     if (weather.error) {
-        
+
         return null
     } else if (!user) {
         return null
@@ -128,23 +128,23 @@ const Weather = () => {
 
 
         return (
-            <div className='weatherParent'>                  
+            <div className='weatherParent'>
                 {weather.weather && (
                     <div className='weatherContainer'>
                         <div className='weatherToday'>
                             <div className='city'>
                                 <p className='cityName'>{`Weather in ${city}`}</p>
-                            </div>              
-                            
-                            
+                            </div>
+                        </div>
+                        <div className='todayDivInner'>
                             <p className='todayDescription'>{todayDescription}</p>
-                            <img className='todayImage' src={iconImage} alt="f" />
                             <p className='currentTemp'>{currentTemp}{'\u00B0'}F</p>
                         </div>
+                        <img className='todayImage' src={iconImage} alt="f" />
                         <div className='day0 weatherWeek'>
                             <p className='day'>Today</p>
                             <img className='weekImage' src={`http://openweathermap.org/img/wn/${currentTempIcon}.png`} alt="" />
-                            
+
                             <p className='dayHigh'>{todayHigh}{'\u00B0'}F</p>
                             <p className='dayLow'>{todayLow}{'\u00B0'}F</p>
                         </div>
@@ -186,7 +186,7 @@ const Weather = () => {
                         </div>
                     </div>
                 )}
-                
+
             </div>
         )
     }

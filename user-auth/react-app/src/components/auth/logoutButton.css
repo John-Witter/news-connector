@@ -1,15 +1,15 @@
 .logoutBtn {
-    background-color: #e3e2d7;
-    color: #7E3EB3;
+    /* background-color: #e3e2d7; */
+    color: #416894;
     font-size: 1rem;
     border: none;
     padding: 0;
     margin: 0;
-    font-family: 'Times';
+    font-family: sans-serif;
 }
 
 .logoutBtn:hover {
     cursor: pointer;
-    font-weight: bolder;
+    text-decoration: underline;
     color: #4b256b;
 }

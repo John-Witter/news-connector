@@ -1,23 +1,49 @@
 .addToSavedContainer {
     color: #000;
+    margin-bottom: -.5rem;
 }
 
 .addToSavedText {
-    border: .33rem solid #e1e0d9;
-    color: #7e3eb3;
-    padding: .5rem;
-    margin-top: 1rem;
+    border: .0625rem solid #656560;
+    color: #416894;
+    padding: .125rem;
+    margin-top: .5rem;
     background-color: #C5C4BC;
-    border-radius: .5rem;
+    border-radius: .125rem;
+    font-size: .75rem;
 }
 
 .addToSavedText:hover {
     cursor: pointer;
     /* font-weight: bold; */
-    color: #4b256b;
+    color: #f1f0eb;
+    background-color: #416894;
 }
 
 .savedText {
     border-bottom: 1px solid #c3c1b4;
     padding-bottom: .5rem
+}
+
+.savedTitle {
+    text-decoration: none;
+    /* color: #7e3eb3; */
+    color: #4974a5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    font-size: 1rem;
+    padding: 0 2rem;
+}
+
+.savedImage {
+    max-width: 75%;
+    border-radius: .25rem;
+    align-items: center;
+    text-align: center;
+}
+
+.savedTitle:hover {
+    text-decoration: underline;
 }

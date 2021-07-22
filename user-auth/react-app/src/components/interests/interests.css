@@ -15,14 +15,15 @@
 .viewInterests {
     border-bottom: 1px solid #c3c1b4;
     padding-bottom: .5rem;
-    color: #7E3EB3;
+    color: #416894;
 }
 
 .viewInterests:hover {
-    font-weight: bolder;
-    color: #4b256b;
+    /* font-weight: bolder;
+    color: #4b256b; */
 }
 
 .viewInterests:hover {
     cursor: pointer;
+    text-decoration: underline;
 }

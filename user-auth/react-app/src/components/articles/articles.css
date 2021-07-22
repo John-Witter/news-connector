@@ -18,12 +18,14 @@
 .articleTitle {
     text-decoration: none;
     /* color: #7e3eb3; */
-    color: #4974a5;
+    color: #416894;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
     font-size: 1rem;
+    padding-left: 2rem;
+    letter-spacing: .03125rem;
 }
 
 p {
@@ -31,12 +33,14 @@ p {
 }
 
 .description {
-    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: .015625rem;
     word-wrap: break-word;
-    text-align: center;
+    text-align: left;
     padding: 1rem 0;
     max-width: 80%;
     font-size: .8rem;
+    margin-bottom: -1rem;
 }
 
 .articleTitle:hover {

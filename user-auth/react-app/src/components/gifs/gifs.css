@@ -24,8 +24,25 @@ a {
     padding: 0 2rem;
 }
 
+.gifSource {
+    text-decoration: none;
+    color: #416894;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    font-size: .75rem;
+    padding: 0 2rem;
+    padding-top: .5rem;
+    font-weight: 300;
+}
+
 .gifTitle:hover {
     /* font-size: larger; */
     /* color: #8a51ba; */
+    text-decoration: underline;
+}
+
+.gifSource:hover {
     text-decoration: underline;
 }

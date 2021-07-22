@@ -5,9 +5,9 @@
 
 .weatherContainer {
     max-height: 90%;
-    border-radius: 1rem;
+    border-radius: .25rem;
     display: grid;
-    background-color: #ADACA0;
+    background-color: #cccbc1;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: .5fr .5fr 1fr;
     grid-template-areas: 
@@ -33,7 +33,7 @@
 }
 
 .cityName {
-    color: #2D2D2B;
+    /* color: #2D2D2B; */
     letter-spacing: 1px;
     font-weight: bolder;
     font-size: larger;
@@ -46,6 +46,7 @@
     margin: 0 auto;
     margin-bottom: 2rem;
     letter-spacing: 2px;
+    color: #323232;
 }
 
 .todayImage {
@@ -85,6 +86,7 @@
     letter-spacing: 2px;
     font-size: smaller;
     padding-left: .25rem;
+    margin-bottom: -.25rem;
 }
 
 .dayHigh {
@@ -97,7 +99,7 @@
 }
 
 .dayLow {
-    color: white;
+    color: #323232;
     letter-spacing: 2px;
     font-weight: bolder;
     font-size: .8rem;

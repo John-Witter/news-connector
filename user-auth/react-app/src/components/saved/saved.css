@@ -5,7 +5,7 @@
 .addToSavedText {
     border: .33rem solid #e1e0d9;
     color: #7e3eb3;
-    padding: .5rem;
+    padding: .25rem;
     margin-top: 1rem;
     background-color: #C5C4BC;
     border-radius: .5rem;
@@ -20,4 +20,26 @@
 .savedText {
     border-bottom: 1px solid #c3c1b4;
     padding-bottom: .5rem
+}
+
+.savedTitle {
+    text-decoration: none;
+    /* color: #7e3eb3; */
+    color: #7a49a5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.savedImage {
+    max-width: 75%;
+    border-radius: .25rem;
+    align-items: center;
+    text-align: center;
+}
+
+.savedTitle:hover {
+    text-decoration: underline;
 }

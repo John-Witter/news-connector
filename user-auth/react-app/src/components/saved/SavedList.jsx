@@ -25,7 +25,12 @@ const SavedList = () => {
             {savedArticles && Object.values(savedArticles).map(item => {
                 return (
                     <div key={item.id} className='content-container'>
-                        <h2><a href={item.itemURL} className='savedTitle'>{item.title}</a></h2>
+                        <h2>
+                            <a href={item.itemURL} className='savedTitle'>{item.title}
+                            </a>
+                            <a href={item.itemURL} className='savedSource'>{item.source}
+                            </a>
+                        </h2>
                         <a href={item.itemURL} className='savedImage'>
                             <img src={item.imageURL} alt={item.title} className='savedImage' />
                         </a>

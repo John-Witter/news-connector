@@ -5,14 +5,16 @@ import '../content.css'
 
 
 const Article = ({ article }) => {
+
     article['itemURL'] = article['url']
     article['imageURL'] = article['urlToImage']
-
+    article['contentSource'] = article.source.name
+    
     return (
         <div className='article content-container'>
             <h2>
                 <a href={article.url} className='articleTitle'>{article.title}</a>
-                <a href={article.url} className='articleSource'>{article.source.name}</a>
+                <a href={article.url} className='articleSource'>{article.contentSource}</a>
             </h2>                        
             <a href={article.url} className='contentImage'>
                 <img src={article.urlToImage} alt={article.title} className='contentImage' />

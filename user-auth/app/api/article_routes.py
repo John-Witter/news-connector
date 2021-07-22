@@ -46,9 +46,5 @@ def get_articles():
         gifs.append(giphy_res.json())
             
 
-
     articles = {'articles': articles}
-    # return {'gifs': '', 'articles': ''}
     return {'gifs': gifs, 'articles': articles}
-    # return news_res.json()
-    # return giphy_res.json()

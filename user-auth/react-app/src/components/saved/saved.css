@@ -37,6 +37,18 @@
     padding: 0 2rem;
 }
 
+.savedSource {
+    text-decoration: none;
+    /* color: #7e3eb3; */
+    color: #4974a5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    font-size: 1rem;
+    padding: 0 2rem;
+}
+
 .savedImage {
     max-width: 75%;
     border-radius: .25rem;

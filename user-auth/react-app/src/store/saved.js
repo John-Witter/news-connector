@@ -21,7 +21,7 @@ const deleteSavedArticle = (article) => ({
 })
 
 // thunks 
-export const addToSaved = (userId, itemURL, imageURL, title, description) => async (dispatch) => {
+export const addToSaved = (userId, itemURL, imageURL, title, description, contentSource) => async (dispatch) => {
     const res = await fetch('/api/saved/', {
         method: "POST",
         headers: {
@@ -32,7 +32,8 @@ export const addToSaved = (userId, itemURL, imageURL, title, description) => asy
             itemURL,
             imageURL,
             title,
-            description
+            description,
+            contentSource
         })
     })
 

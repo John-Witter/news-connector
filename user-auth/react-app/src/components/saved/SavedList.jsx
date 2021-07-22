@@ -28,7 +28,7 @@ const SavedList = () => {
                         <h2>
                             <a href={item.itemURL} className='savedTitle'>{item.title}
                             </a>
-                            <a href={item.itemURL} className='savedSource'>{item.source}
+                            <a href={item.itemURL} className='savedSource'>{item.contentSource}
                             </a>
                         </h2>
                         <a href={item.itemURL} className='savedImage'>

@@ -24,15 +24,15 @@ const AddToSaved = ({ item }) => {
     const handleAddToSaved = () => {
         //todo
         //check if article is already saved first
-        let { title, itemURL, imageURL, description } = item
+        let { title, itemURL, imageURL, description, contentSource } = item
         if (savedText === 'Remove from Saved') {
-            dispatch(removeFromSaved(userId, itemURL, imageURL, title, description))
+            dispatch(removeFromSaved(userId, itemURL, imageURL, title, description, contentSource))
             setSavedText('Add to Saved')
             return
         }
 
         if (savedText === 'Add to Saved') {
-            dispatch(addToSaved(userId, itemURL, imageURL, title, description))
+            dispatch(addToSaved(userId, itemURL, imageURL, title, description, contentSource))
             setSavedText('Remove from Saved')
             return
         }

@@ -24,7 +24,8 @@ def post_to_saved():
             itemURL = form.data['itemURL'],
             imageURL = form.data['imageURL'],
             title = form.data['title'],
-            description = form.data['description']
+            description = form.data['description'],
+            contentSource = form.data['contentSource']
         )
         db.session.add(new_article)
         db.session.commit()

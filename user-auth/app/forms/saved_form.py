@@ -8,3 +8,4 @@ class SavedForm(FlaskForm):
     imageURL = StringField('imageURL', [DataRequired()])
     title = StringField('title', [DataRequired()])
     description = StringField('description')
+    contentSource = StringField('contentSource')

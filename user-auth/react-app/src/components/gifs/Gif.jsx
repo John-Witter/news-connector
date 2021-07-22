@@ -6,7 +6,7 @@ import '../content.css'
 const Gif = ({ gif }) => {
     gif['itemURL'] = gif.url
     gif['imageURL'] = gif.images.original.url
-    gif['source'] = 'Giphy'
+    gif['contentSource'] = 'Giphy'
 
     return (
         <div className='gif content-container'>

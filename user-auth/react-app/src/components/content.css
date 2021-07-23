@@ -14,7 +14,8 @@ body {
         "navContainer navContainer navContainer"
         "titleContainer titleContainer titleContainer"
         "interests parent saved"
-        "interests parent saved";
+        "interests parent saved"
+        "foot foot foot";
         grid-template-columns: 1fr 2fr 1fr;
         width: 100%;
         font-family: sans-serif;
@@ -35,6 +36,17 @@ body {
     grid-area: navContainer;
     padding-bottom: 1rem;
     border-bottom: 1px solid #C3C1B4;
+}
+
+.footer {
+    grid-area: foot;
+    /* padding-top: 1rem;
+    padding-bottom: -5rem; */
+    border-top: 1px solid #C3C1B4;
+    margin-top: 5rem;
+    height: 50px;
+    /* margin-bottom: -10rem; */
+
 }
 
 .titleContainer {

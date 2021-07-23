@@ -24,7 +24,8 @@ const Content = () => {
     }, [dispatch])
 
     if (!user) {
-        return <Default />
+        // return <Default />
+        // instead of returning a garbage splash page, make it nice like
     }
 
     return (

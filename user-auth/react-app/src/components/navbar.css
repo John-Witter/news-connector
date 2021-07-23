@@ -12,28 +12,35 @@
 
 .navbar li {
     list-style: none;
-    font-family: 'Times';
+    font-family: sans-serif;
+    letter-spacing: .03125rem;
 }
 
 .navbar li a {
     font-size: 1rem;
 }
 
+.authLink {
+    letter-spacing: .03125rem;
+}
+
 .demoBtn {
-    color: #7E3EB3;
+    color: #416894;
     font-size: 1rem;
 }
 
 .navbar li:hover {
     cursor: pointer;
-    font-weight: bolder;
-    color: #4b256b;
+    text-decoration: underline;
+    /* font-weight: bolder;
+    color: #4b256b; */
 }
 
 .demoBtn:hover {
     cursor: pointer;
-    font-weight: bolder;
-    color: #4b256b;
+    text-decoration: underline;
+    /* font-weight: bolder;
+    color: #4b256b; */
 }
 
 /* .interests {

@@ -4,6 +4,8 @@ import { loadArticles } from "../../store/articles";
 import Article from '../articles/Article';
 import Gif from '../gifs/Gif';
 import Default from '../default/Default';
+import Splash from '../splash/Splash';
+
 import '../content.css'
 
 const Content = () => {
@@ -24,7 +26,9 @@ const Content = () => {
     }, [dispatch])
 
     if (!user) {
-        return <Default />
+        // return <Default />
+        // instead of returning a garbage splash page, make it nice like
+        return <Splash />
     }
 
     return (

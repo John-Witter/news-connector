@@ -11,6 +11,7 @@ import Title from "./components/title/Title";
 import SavedList from "./components/saved/SavedList";
 import Weather from "./components/weather/Weather";
 import { authenticate } from "./store/session";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ function App() {
           <Interests />
         </Route>
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }

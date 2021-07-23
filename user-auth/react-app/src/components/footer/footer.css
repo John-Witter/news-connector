@@ -1,0 +1,25 @@
+.footer{
+
+}
+
+.footerUL {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footerLI {
+    list-style: none;
+}
+
+.linkText {
+    color: #416894;
+    letter-spacing: .03125rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.footerLI:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -22,12 +22,12 @@ const NavBar = () => {
     <nav className='navContainer'>
       <ul className='navbar'>
         {!user && <li>
-          <NavLink to="/login" exact={true} activeClassName="active">
+          <NavLink className='authLink' to="/login" exact={true} activeClassName="active">
             Login
           </NavLink>
         </li>}
        {!user && <li>
-          <NavLink to="/sign-up" exact={true} activeClassName="active">
+          <NavLink className='authLink' to="/sign-up" exact={true} activeClassName="active">
             Sign Up
           </NavLink>
         </li>}

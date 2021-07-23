@@ -1,0 +1,14 @@
+.mainImageContainer {
+    display: flex;
+    align-content: center;
+    width: 100vw;
+}
+
+.mainImage {
+    background: url("./splashImage.jpg");
+    /* background-image: url("https://images.unsplash.com/photo-1490775949603-0e355e8e01ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1047&q=80"); */
+    background-size: contain;
+    height: 33rem;
+    width: 49rem;
+    margin: 0 auto;
+}

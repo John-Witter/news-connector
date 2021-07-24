@@ -1,3 +1,5 @@
+// this is the 
+
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { loadArticles } from "../../store/articles";
@@ -7,12 +9,14 @@ import Default from '../default/Default';
 import Splash from '../splash/Splash';
 
 import '../content.css'
+import Headline from '../articles/Headline';
 
 const Content = () => {
     const dispatch = useDispatch()
     const user = useSelector(state => state.session.user)
     const content = useSelector(state => state.article)
     const articles = content.articles
+    const headlines = content.headlines
     const gifs = content.gifs
     let userId
 
@@ -33,11 +37,19 @@ const Content = () => {
 
     return (
         <div className='parent'>
+                {/* render headlines first */}
+                {user && headlines && headlines.map((article) => {
+                    return (
+                        <div className="container" key={article.url}>
+                            <Headline article={article} />
+                        </div>
+                    )
+                })}
             {user && articles && articles.map((article, idx) => {
                 return (
-                    <div className='container' key={idx}>
-                        <Article article={article} key={article.url} />
-                        {idx % 2 === 0 && gifs[idx / 2] && <Gif gif={gifs[idx / 2]} key={gifs[idx / 2]}/>}
+                    <div className='container' key={article.url}>
+                        <Article article={article} />
+                        {idx % 2 === 0 && gifs[idx / 2] && <Gif gif={gifs[idx / 2]} key={gifs[idx / 2]} />}
                     </div>
                 )
             })}

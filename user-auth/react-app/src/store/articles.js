@@ -41,6 +41,7 @@ export default function ArticleReducer (state={}, action) {
             console.log('!!!!!!READ_ARTICLES action', action)
             newState['articles'] = articles
             newState['gifs'] = gifs1
+            newState['headlines'] = action.articles.headlines
             return newState
         default:
             return state

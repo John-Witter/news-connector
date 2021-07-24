@@ -36,7 +36,7 @@ def get_articles():
     random.shuffle(articles)
 
     # get headlines
-    headline_url = ('https://newsapi.org/v2/top-headlines?country=us') + '&language=en' + '&apiKey=' + news_api_key + '&pageSize=100'
+    headline_url = 'https://newsapi.org/v2/top-headlines?country=us' + '&language=en' + '&apiKey=' + news_api_key + '&pageSize=100'
     headline_res = requests.get(headline_url)
     headlines = headline_res.json()['articles']
 

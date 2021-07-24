@@ -1,7 +1,7 @@
 from re import T
 from flask import Blueprint, jsonify, request
 from flask_login import current_user
-import requests, json, random
+import requests, json, random, os
 from app.models import db, Interest, Tag
 
 article_routes = Blueprint('articles', __name__)
@@ -26,8 +26,9 @@ def get_articles():
     random.shuffle(titles)
 
     # 100 requests per day available
-    news_api_key = '13bc774f3bb545d8935600ca47e4cfcf'
-
+    
+    news_api_key = os.environ.get('NEWS_API')
+    
     news_url = ('https://newsapi.org/v2/everything?q=' + ' OR '.join(titles)
            ) + '&language=en' + '&apiKey=' + news_api_key + '&pageSize=100'
 
@@ -37,7 +38,8 @@ def get_articles():
     
 
     # Note: All API Keys start as beta keys, which are rate limited(42 reads per hour and 1000 searches/API calls per day.)
-    giphy_api_key = 'jyp7w8WhK8aP2NwucT1vGpyUUYaiWhtc'
+    
+    giphy_api_key = os.environ.get('GIPHY_API')
 
     gifs = []
     for i in range(len(interests)):

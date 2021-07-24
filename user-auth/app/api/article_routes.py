@@ -26,7 +26,6 @@ def get_articles():
     random.shuffle(titles)
 
     # 100 requests per day available
-    
     news_api_key = os.environ.get('NEWS_API')
     
     news_url = ('https://newsapi.org/v2/everything?q=' + ' OR '.join(titles)
@@ -35,10 +34,13 @@ def get_articles():
     news_res = requests.get(news_url)    
     articles = news_res.json()['articles']
     random.shuffle(articles)
-    
+
+    # get headlines
+    headline_url = ('https://newsapi.org/v2/top-headlines?country=us') + '&language=en' + '&apiKey=' + news_api_key + '&pageSize=100'
+    headline_res = requests.get(headline_url)
+    headlines = headline_res.json()['articles']
 
     # Note: All API Keys start as beta keys, which are rate limited(42 reads per hour and 1000 searches/API calls per day.)
-    
     giphy_api_key = os.environ.get('GIPHY_API')
 
     gifs = []
@@ -49,4 +51,4 @@ def get_articles():
             
 
     articles = {'articles': articles}
-    return {'gifs': gifs, 'articles': articles}
+    return {'gifs': gifs, 'articles': articles, 'headlines': headlines}

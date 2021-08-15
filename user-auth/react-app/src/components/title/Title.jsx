@@ -9,7 +9,7 @@ const Title = () => {
             <NavLink to="/" exact={true} activeClassName="active" className='title-link'>
                 <h1 className='title'>news-connector</h1>
             </NavLink>
-            < LogoutButton />
+            {/* < LogoutButton /> */}
         </div>
     )
 }

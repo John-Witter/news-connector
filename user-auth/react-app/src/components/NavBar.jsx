@@ -20,7 +20,7 @@ const NavBar = () => {
 
   // remove navbar once user logs in
   // logout button will be rendered with title
-  if (user) return (null)
+  // if (user) return (null)
 
   return (
     <nav className='navContainer'>
@@ -35,9 +35,9 @@ const NavBar = () => {
             Sign Up
           </NavLink>
         </li>}
-        {/* {user && <li>
+        {user && <li>
           <LogoutButton />
-        </li>} */}
+        </li>}
         {!user && <li onClick={e => demoUser(e)} className='demoBtn'>
           Demo User
         </li>

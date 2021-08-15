@@ -40,14 +40,14 @@ const Content = () => {
                 {/* render headlines first */}
                 {user && headlines && headlines.map((article) => {
                     return (
-                        <div className="container" key={article.url}>
+                        <div className="container" key={`${Math.random()} ${article.url}`}>
                             <Headline article={article} />
                         </div>
                     )
                 })}
             {user && articles && articles.map((article, idx) => {
                 return (
-                    <div className='container' key={article.url}>
+                    <div className='container' key={`${Math.random()} ${article.url}`}>
                         <Article article={article} />
                         {idx % 2 === 0 && gifs[idx / 2] && <Gif gif={gifs[idx / 2]} key={gifs[idx / 2]} />}
                     </div>

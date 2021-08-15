@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import LogoutButton from '../auth/LogoutButton'
 import './title.css'
 
 const Title = () => {
@@ -8,6 +9,7 @@ const Title = () => {
             <NavLink to="/" exact={true} activeClassName="active">
                 <h1 className='title'>news-connector</h1>
             </NavLink>
+            < LogoutButton />
         </div>
     )
 }

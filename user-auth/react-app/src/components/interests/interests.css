@@ -49,6 +49,7 @@
     flex-direction: row;
     list-style: none;
     justify-content: flex-end;
+    margin-bottom: .25rem;
 }
 
 .viewInterests {

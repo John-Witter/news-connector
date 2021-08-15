@@ -36,8 +36,8 @@ const Interests = () => {
     }
 
     return (
-        <div className='interests'>
-            <div>
+        <div className='interestsOuterMost'>
+            <div className='interests'>
                 <p
                     className='viewInterests'
                     value={viewInterests}
@@ -49,18 +49,19 @@ const Interests = () => {
                     <p>Log in to add interests to your newsfeed!</p>
                 )}
                 {viewInterests === 'Hide' && user && (
-                    <div>
-                        <form onSubmit={handleSubmit}>
+                    <div className='interestsContainer'>
+                        <form onSubmit={handleSubmit} className='inputHTMLForm'>
                             <input
                                 type="text"
                                 id="titleInput"
+                                className="titleInput"
                                 placeholder="add new interest"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}
                             />
                             <button type="submit">Add to Feed</button>
                         </form>
-                        <ul>
+                        <ul className='interestFormListContainer'>
                             {Object.values(allInterests).map(interest => (
                                 <UpdateInterests userId={userId} interest={interest} key={interest.id} />
                             )

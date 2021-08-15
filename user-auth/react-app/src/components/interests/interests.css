@@ -7,15 +7,56 @@
     margin: 0 5px;
 }
 
+.interests {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.interestsContainer {
+    /* display: flex; */
+    margin: 0 auto;
+}
+
+.inputHTMLForm {
+    /* padding-left: 15px; */
+}
+
+.interestListItem {
+    text-align: left;
+    display: flex;
+}
+
+.interestTitle {
+    display: inline;
+        /* text-align: left; */
+    margin-right: .8rem;
+    /* justify-self: ; */
+    width: 119.76px;
+}
+
+.titleInput {
+    color: blue;
+}
+
+.interestFormListContainer {
+    color: #222;
+    display: inline;
+}
+
 .interestForm {
     display: flex;
     flex-direction: row;
+    list-style: none;
+    justify-content: flex-end;
+    margin-bottom: .25rem;
 }
 
 .viewInterests {
     border-bottom: 1px solid #c3c1b4;
     padding-bottom: .5rem;
     color: #416894;
+    align-self: center;
 }
 
 .viewInterests:hover {

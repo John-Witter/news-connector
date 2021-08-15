@@ -41,8 +41,7 @@ function App() {
         <Route path="/" exact={true} >
           <Title />
           <SavedList />
-          <Content />
-          
+          <Content />          
           <Interests />
         </Route>
       </Switch>

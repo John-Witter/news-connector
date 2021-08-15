@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from "react-redux";
 import { editInterestTitle } from "../../store/interests";
 import DeleteInterest from "./DeleteInterest";
+import './interests.css'
 
 const UpdateInterests = ({ userId, interest }) => {
     const dispatch = useDispatch()
@@ -33,9 +34,9 @@ const UpdateInterests = ({ userId, interest }) => {
     return (
         <div className='interestForm'>
             < form onSubmit={handleEditConfirm}>
-                <li>
+                <li className='interestListItem'>
 
-                    {showTitleEditor === false && selectedInterestTitle}
+                    {showTitleEditor === false && <div className='interestTitle'>{selectedInterestTitle}</div>}
                     {showTitleEditor && (
                         <>
                             <input

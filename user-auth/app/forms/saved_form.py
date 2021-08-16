@@ -9,3 +9,4 @@ class SavedForm(FlaskForm):
     title = StringField('title', [DataRequired()])
     description = StringField('description')
     contentSource = StringField('contentSource')
+    publishedTime = StringField('publishedTime')

@@ -21,19 +21,22 @@ const deleteSavedArticle = (article) => ({
 })
 
 // thunks 
-export const addToSaved = (userId, itemURL, imageURL, title, description, contentSource) => async (dispatch) => {
+export const addToSaved = (userId, itemURL, imageURL, title, description, contentSource, publishedAt) => async (dispatch) => {
+    let publishedTime
+    publishedAt ? publishedTime = publishedAt.split('T')[0] : publishedTime = null
     const res = await fetch('/api/saved/', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
-        }, 
+        },
         body: JSON.stringify({
             userId,
             itemURL,
             imageURL,
             title,
             description,
-            contentSource
+            contentSource,
+            publishedTime
         })
     })
 
@@ -53,7 +56,10 @@ export const loadSavedArticles = () => async (dispatch) => {
     }
 }
 
-export const removeFromSaved = (userId, itemURL, imageURL, title, description) => async (dispatch) => {
+export const removeFromSaved = (userId, itemURL, imageURL, title, description, publishedAt) => async (dispatch) => {
+
+    let publishedTime
+    publishedAt ? publishedTime = publishedAt.split('T')[0] : publishedTime = null
     const res = await fetch('/api/saved/', {
         method: "DELETE",
         headers: {
@@ -64,7 +70,8 @@ export const removeFromSaved = (userId, itemURL, imageURL, title, description) =
             itemURL,
             imageURL,
             title,
-            description
+            description,
+            publishedTime
         })
     })
 
@@ -75,8 +82,8 @@ export const removeFromSaved = (userId, itemURL, imageURL, title, description) =
 }
 
 // reducer
-export default function SavedReducer (state={}, action) {
-    let newState = {...state}
+export default function SavedReducer(state = {}, action) {
+    let newState = { ...state }
 
     switch (action.type) {
         case READ_SAVED_ARTICLES:

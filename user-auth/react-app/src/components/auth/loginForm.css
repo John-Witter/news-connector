@@ -13,5 +13,28 @@
 }
 
 .login-input-container {
-    margin: 0 auto;
+    width: 300px;
+    display: flex;
+}
+
+.login-input-label {
+    margin-right: 41px;
+}
+
+.login-input {
+    color: #000;
+}
+
+
+.password-input-container {
+    width: 300px;
+    display: flex;
+}
+
+.password-input-label {
+    margin-right: 10px;
+}
+
+.password-input {
+    margin-right: 15px;
 }

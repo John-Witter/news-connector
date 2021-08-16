@@ -11,3 +11,35 @@
     flex-direction: column;
     align-items: center;
 }
+
+.name-input-container {
+    width: 310px;
+}
+
+.name-label {
+    margin-right: 59px;
+}
+
+.email-input-container {
+    width: 310px;
+}
+
+.email-label {
+    margin-right: 101px;
+}
+
+.password-input-container {
+    width: 310px;
+}
+
+.password-label {
+    margin-right: 70px;
+}
+
+.repeat-password-input-container {
+    width: 310px;
+}
+
+.repeat-password-label {
+    margin-right: 10px;
+}

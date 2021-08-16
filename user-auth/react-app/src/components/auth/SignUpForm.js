@@ -43,7 +43,7 @@ const SignUpForm = () => {
     <div className='signup-outermost-container'>
       <form onSubmit={onSignUp} className='signup-form'>
         <div className='name-input-container'>
-          <label htmlFor="name">User Name</label>
+          <label htmlFor="name" className='name-label'>User Name</label>
           <input
             type="text"
             id="name"
@@ -53,7 +53,7 @@ const SignUpForm = () => {
           ></input>
         </div>
         <div className='email-input-container'>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className='email-label'>Email</label>
           <input
             type="text"
             id="email"
@@ -63,7 +63,7 @@ const SignUpForm = () => {
           ></input>
         </div>
         <div className='password-input-container'>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className='password-label'>Password</label>
           <input
             type="password"
             id="password"
@@ -73,11 +73,11 @@ const SignUpForm = () => {
           ></input>
         </div>
         <div className='repeat-password-input-container'>
-          <label htmlFor="repeat_password">Repeat Password</label>
+          <label htmlFor="repeat-password" className='repeat-password-label'>Repeat Password</label>
           <input
             type="password"
-            id="repeat_password"
-            name="repeat_password"
+            id="repeat-password"
+            name="repeat-password"
             onChange={updateRepeatPassword}
             value={repeatPassword}
             required={true}

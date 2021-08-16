@@ -1,0 +1,40 @@
+.login-outermost-container {
+    height: 75vh;
+        width: 100vw;
+}
+
+.login-form {
+    height: 100%;
+    /* padding-left: 10px; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-input-container {
+    width: 300px;
+    display: flex;
+}
+
+.login-input-label {
+    margin-right: 41px;
+}
+
+.login-input {
+    color: #000;
+}
+
+
+.password-input-container {
+    width: 300px;
+    display: flex;
+}
+
+.password-input-label {
+    margin-right: 10px;
+}
+
+.password-input {
+    margin-right: 15px;
+}

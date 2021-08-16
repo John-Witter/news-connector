@@ -32,10 +32,10 @@
         text-decoration: none;
     /* color: #7e3eb3; */
     color: #416894;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
+    text-align: left; */
     font-size: .75rem;
     padding-left: 2rem;
     letter-spacing: .03125rem;

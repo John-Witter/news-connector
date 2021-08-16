@@ -10,6 +10,7 @@ class Saved(db.Model):
     title = db.Column(db.String, nullable=False)
     description = db.Column(db.String)
     contentSource = db.Column(db.String)
+    publishedTime = db.Column(db.String)
 
     def to_dict(self):
         return {
@@ -19,5 +20,6 @@ class Saved(db.Model):
             "imageURL": self.imageURL,
             "title": self.title,
             "description": self.description,
-            "contentSource": self.contentSource
+            "contentSource": self.contentSource,
+            "publishedTime": self.publishedTime
         }

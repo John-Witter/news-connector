@@ -1,0 +1,12 @@
+.login-outermost-container {
+    height: 75vh;
+}
+
+.login-form {
+    height: 100%;
+    padding-left: 10px;
+}
+
+.login-input-container {
+    margin: 0 auto;
+}

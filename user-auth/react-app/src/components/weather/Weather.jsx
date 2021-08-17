@@ -143,7 +143,7 @@ const Weather = () => {
                         <img className='todayImage' src={iconImage} alt="f" />
                         <div className='day0 weatherWeek'>
                             <p className='day'>Today</p>
-                            <img className='weekImage' src={`http://openweathermap.org/img/wn/${currentTempIcon}.png`} alt="" />
+                            {currentTempIcon && <img className='weekImage' src={`http://openweathermap.org/img/wn/${currentTempIcon}.png`} alt="" />}
 
                             <p className='dayHigh'>{todayHigh}{'\u00B0'}F</p>
                             <p className='dayLow'>{todayLow}{'\u00B0'}F</p>

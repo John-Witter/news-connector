@@ -1,10 +1,12 @@
 .deleteBtn {
     /* display: inline-block; */
     margin: 0 5px;
+    max-height: 21px;
 }
 
 .editBtn {
     margin: 0 5px;
+    max-height: 21px;
 }
 
 .interests {

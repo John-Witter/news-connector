@@ -1,6 +1,7 @@
 .login-outermost-container {
     height: 75vh;
-        width: 100vw;
+    width: 100vw;
+    margin-top: 2rem;
 }
 
 .login-form {

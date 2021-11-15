@@ -9,7 +9,7 @@ import Weather from "../weather/Weather";
 const Interests = () => {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('')
-    const [viewInterests, setViewInterests] = useState('View')
+    const [viewInterests, setViewInterests] = useState('Hide')
     const user = useSelector((state) => state.session.user);
     let allInterests = useSelector(state => state.interest)
     let userId

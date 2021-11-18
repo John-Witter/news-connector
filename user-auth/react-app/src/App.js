@@ -13,6 +13,15 @@ import Weather from "./components/weather/Weather";
 import { authenticate } from "./store/session";
 import Footer from "./components/footer/Footer";
 
+
+// Google Analytics
+// Initialize ReactGA with standardImplementation: true option.
+// https://www.npmjs.com/package/react-ga?activeTab=readme
+
+import ReactGA from "react-ga";
+ReactGA.initialize("UA-213353187-1", { standardImplementation: true });
+
+
 function App() {
   const dispatch = useDispatch();
   const [loaded, setLoaded] = useState(false);

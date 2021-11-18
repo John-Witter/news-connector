@@ -65,16 +65,16 @@ const NavBar = () => {
                     </li>
                 )}
                 {user && (
-                    <li>
-                        <LogoutButton
-                            onClick={() =>
-                                Event(
-                                    "LOGOUT LINK",
-                                    "Link to logout clicked",
-                                    "NAV_BAR"
-                                )
-                            }
-                        />
+                    <li
+                        onClick={() =>
+                            Event(
+                                "LOGOUT LINK",
+                                "Link to logout clicked",
+                                "NAV_BAR"
+                            )
+                        }
+                    >
+                        <LogoutButton />
                     </li>
                 )}
                 {!user && (

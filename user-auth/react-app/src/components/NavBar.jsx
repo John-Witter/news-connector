@@ -32,14 +32,17 @@ const NavBar = () => {
           </NavLink>
         </li>}
        {!user && <li>
-          <NavLink className='authLink' to="/sign-up" exact={true} activeClassName="active">
+          <NavLink className='authLink' to="/sign-up" exact={true} activeClassName="active" onClick={() => Event("SIGNUP LINK", "Link to signup clicked", "NAV_BAR")}>
             Sign Up
           </NavLink>
         </li>}
         {user && <li>
           <LogoutButton />
         </li>}
-        {!user && <li onClick={e => demoUser(e)} className='demoBtn'>
+        {!user && <li className='demoBtn' onClick={e => {
+            Event("DEMO LINK", "Link to demo clicked", "NAV_BAR");
+            demoUser(e);
+        }}>
           Demo User
         </li>
         }

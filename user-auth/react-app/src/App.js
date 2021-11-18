@@ -12,13 +12,7 @@ import SavedList from "./components/saved/SavedList";
 import Weather from "./components/weather/Weather";
 import { authenticate } from "./store/session";
 import Footer from "./components/footer/Footer";
-
-// Google Analytics
-// Initialize ReactGA with standardImplementation: true option.
-// https://www.npmjs.com/package/react-ga?activeTab=readme
-// https://stackoverflow.com/questions/49279820/adding-google-analytics-to-react
-import ReactGA from "react-ga";
-ReactGA.initialize("UA-213353187-1");
+import {PageView, initGA} from '../src/components/Google Analytics/GoogleAnalytics.js'
 
 function App() {
     const dispatch = useDispatch();
@@ -29,6 +23,10 @@ function App() {
             await dispatch(authenticate());
             setLoaded(true);
         })();
+
+        // initialize ReactGA
+        initGA("UA-213353187-1");
+        PageView();
     }, []);
 
     if (!loaded) {
@@ -50,9 +48,6 @@ function App() {
                     <SavedList />
                     <Content />
                     <Interests />
-                    {ReactGA.pageview(
-                        window.location.pathname + window.location.search
-                    )}
                 </Route>
             </Switch>
             <Footer />

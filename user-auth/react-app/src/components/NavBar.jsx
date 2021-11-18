@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { login } from '../store/session';
+import { Event } from './Google Analytics/GoogleAnalytics';
 import './navbar.css'
 import './content.css'
 
@@ -26,7 +27,7 @@ const NavBar = () => {
     <nav className='navContainer'>
       <ul className='navbar'>
         {!user && <li>
-          <NavLink className='authLink' to="/login" exact={true} activeClassName="active">
+          <NavLink className='authLink' to="/login" exact={true} activeClassName="active" onClick={() => Event("LOGIN LINK", "Link to login clicked", "NAV_BAR")}>
             Login
           </NavLink>
         </li>}

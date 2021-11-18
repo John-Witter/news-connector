@@ -13,50 +13,51 @@ import Weather from "./components/weather/Weather";
 import { authenticate } from "./store/session";
 import Footer from "./components/footer/Footer";
 
-
 // Google Analytics
 // Initialize ReactGA with standardImplementation: true option.
 // https://www.npmjs.com/package/react-ga?activeTab=readme
-
+// https://stackoverflow.com/questions/49279820/adding-google-analytics-to-react
 import ReactGA from "react-ga";
-ReactGA.initialize("UA-213353187-1", { standardImplementation: true });
-
+ReactGA.initialize("UA-213353187-1");
 
 function App() {
-  const dispatch = useDispatch();
-  const [loaded, setLoaded] = useState(false);
+    const dispatch = useDispatch();
+    const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    (async() => {
-      await dispatch(authenticate());
-      setLoaded(true);
-    })();
-  }, []);
+    useEffect(() => {
+        (async () => {
+            await dispatch(authenticate());
+            setLoaded(true);
+        })();
+    }, []);
 
-  if (!loaded) {
-    return null;
-  }
+    if (!loaded) {
+        return null;
+    }
 
-  return (
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route>
-        <Route path="/" exact={true} >
-          <Title />
-          <SavedList />
-          <Content />          
-          <Interests />
-        </Route>
-      </Switch>
-      <Footer />
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <NavBar />
+            <Switch>
+                <Route path="/login" exact={true}>
+                    <LoginForm />
+                </Route>
+                <Route path="/sign-up" exact={true}>
+                    <SignUpForm />
+                </Route>
+                <Route path="/" exact={true}>
+                    <Title />
+                    <SavedList />
+                    <Content />
+                    <Interests />
+                    {ReactGA.pageview(
+                        window.location.pathname + window.location.search
+                    )}
+                </Route>
+            </Switch>
+            <Footer />
+        </BrowserRouter>
+    );
 }
 
 export default App;
